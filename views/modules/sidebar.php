@@ -27,14 +27,14 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="/ProyectoKohaku/userupdate">
+        <a class="nav-link" href="/kohaku_php/userupdate">
             <i class="fas fa-house-user"></i>
             <span>Administrador</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="/ProyectoKohaku/class">
+        <a class="nav-link" href="/kohaku_php/class">
             <i class="far fa-calendar-alt"></i>
             <span> Clases</span></a>
            
@@ -49,7 +49,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="/ProyectoKohaku/adminList">
+        <a class="nav-link" href="/kohaku_php/adminList">
             <i class="fas fa-tasks"></i>
             <span>Progreso</span></a>
     </li>

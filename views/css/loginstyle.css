@@ -34,10 +34,13 @@ p {
 
 span {
 	font-size: 12px;
+	font-weight: bold;
+	color: #393939;
+	margin: 0;
 }
 
 a {
-	color: #ca0213;
+	color: #cb2d1b;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
@@ -45,8 +48,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #ca0213;
-	background-color: #ca0213;
+	border: 1px solid #cb2d1b;
+	background-color: #cb2d1b;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -96,7 +99,7 @@ select{
 }
 
 .container {
-	background-color: rgba(255, 255, 255, 0.082);
+	background-color: rgba(0, 0, 0, 0.082);
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
@@ -167,9 +170,9 @@ select{
 }
 
 .overlay {
-	background: #da0315;
-	background: -webkit-linear-gradient(to right, #f30216, #da0315);
-	background: linear-gradient(to right, #f30216, #da0315);
+	background: #cb2d1b;
+	background: -webkit-linear-gradient(to right, #cb2d1b, #cb2d1b);
+	background: linear-gradient(to right, #cb2d1b, #cb2d1b);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

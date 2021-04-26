@@ -31,16 +31,15 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<h2>LOGIN KOHAKU 1</h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container" overflow: auto >
 
 		<form action="" method="post" overflow: auto>
-			<h1>Crear cuenta</h1>
+			<h1 style="color: #393939">Crear cuenta</h1>
 			<div class="social-container">
 
 			</div>
-			<span>Puedes usar tu correo para registrarte</span>
+			<span>registrarte con tu correo electronico</span>
 			<input type="text" placeholder="Nombre" id="first_name" name= "first_name" />
 			<input type="text" placeholder="Apellido" id="last_name" name="last_name">
 			<!--<select  name = "id_type" name = "id_type">
@@ -62,31 +61,31 @@
 	</div>
 	<div class="form-container sign-in-container">
 		<form action="" method="POST" autocomplete="off">
-			<h1>Registro</h1>
+			<h1 style="color: #393939">Iniciar sesión</h1>
 			<div class="social-container">
 				<!--<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>-->
 			</div>
-			<span>Puedes ingresar con tu cuenta</span>
+			<span>Correo Electronico</span>
             <!-- name="loginemail" name="loginpass" -->
 			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="wuilson28@gmail.com" />
+			<span>Contraseña</span>
 			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass" value="55555" />
 		<a href="#">Olvidaste tu contraseña?</a>
-			<button type="submit" value="login">Ingresa</button>
+			<button type="submit" value="login">Ingresar</button>
 		</form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Bienvenido de vuelta!</h1>
-				<p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
-				<p><?php $error?> </p>				 
-				<button class="ghost" id="signIn">Sign In</button>
+				<img src="./views/assets/img/logokohakublanco.png" width="250" height="250">
+				<p>Ingrese sus datos personales y comience con nosotros</p>			 
+				<button class="ghost" id="signIn">Iniciar sesión</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hola amigo!</h1>
-				<p>Ingrese sus datos personales y comience con nosotros</p>
+				<img src="./views/assets/img/logokohakublanco.png" width="250" height="250">
+				<p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
 				<button class="ghost" id="signUp">Inscribirse</button>
 			</div>
 		</div>

@@ -21,7 +21,7 @@
     <?php include "views/modules/script.php"; ?>
 </head>
 
-<body id="page-top">
+<body id="page-top" style="background-color: #393939">
     <?php
         //peticion ajax
         $petitionAjax=false;
