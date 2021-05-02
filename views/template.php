@@ -21,7 +21,7 @@
     <!--<?php include "views/modules/script.php"; ?>-->
 </head>
 
-<body id="page-top" style="background-color: #393939">
+<body id="page-top">
     <?php
         //peticion ajax
         $petitionAjax=false;
@@ -85,7 +85,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Kohaku 2020</span>
+                        <span>Copyright &copy; Kohaku 2021</span>
                     </div>
                 </div>
             </footer>
