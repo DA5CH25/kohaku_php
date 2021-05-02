@@ -38,9 +38,9 @@
                 $_SESSION['userid_sk']=$userdata['id_usuario'];
 
                 //Se agrega este código para acceder a la vista del calendario
-                $url=SERVER_RELATIVE_URL."class";
+                $url=SERVER_RELATIVE_URL."userupdate";
                 
-               // return $urlLocation ='<script> window.location=" '.$url.'"</script>';//redireccionar el usuario
+               
                 return $url;
 
                /* $alert=[
@@ -75,7 +75,7 @@
                 unset($_SESSION['userid_sk']);
                 @session_destroy();
             }
-            else{
+            /*else{
                 $alert=[
                     "alert"=>"simple",
                     "title"=>"ocurrió un error inesperado",
@@ -83,7 +83,7 @@
                     "type"=>"error"
                 ];
                 return mainModel::sweet_alert($alert);
-            }
+            }*/
         }
         
     }
