@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<!-- Page Heading -->
+	<!-- Page Heading 
 		<div class="d-sm-flex align-items-center justify-content-start mb-4">
             
             <a href="#" class="d-none mr-2 d-sm-inline-block btn btn-sm btn-kohaku shadow-sm">
@@ -8,7 +8,7 @@
 			<a href="#" class="d-none mr-2 d-sm-inline-block btn btn-sm btn-kohaku shadow-sm">
 				<i class="fas fa-download fa-sm text-white-50"></i> Registar Clase
             </a>
-        </div>
+        </div>-->
 		
     <!-- Content Row -->
     <div class="row">
@@ -26,7 +26,7 @@
 			     
 			  }
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_administrador){
-			     include "views/modules/PAGINA NUEVA CAMBIAR ADMIN.php";
+				include "views/modules/useredituser.php";
 			  }
 			}
 			?>

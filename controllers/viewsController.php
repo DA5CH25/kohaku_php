@@ -6,7 +6,7 @@
     class viewsController extends viewsModel{
         //Este contralador obtiene la plantilla y la muestra
         public function get_template_controller(){
-           return require_once "./views/template.php";
+           return require_once "./views/plantilla.php";
         }
 
         //cuando se envie un valor por la url muestre el contenido 
@@ -22,7 +22,7 @@
                 $answer=viewsModel::get_views_model($route[0]);
             } else {
                 //si la variable no está definida envía al login
-                $answer="login";
+                $answer="index";
             }
             return $answer;
         }

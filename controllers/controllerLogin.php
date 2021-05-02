@@ -56,8 +56,8 @@
                 $alert=[
                     "alert"=>"simple",
                     "title"=>"ocurrió un error inesperado",
-                    "text"=>"El nombre de usuario y contrseña no son correcto o su cuenta puede estar deshabilitada",
-                    //"text"=>$userdatarequest['total']."<br>".$_SESSION['userid_sk'],
+                    //"text"=>"El nombre de usuario y contraseña no son correcto o su cuenta puede estar deshabilitada",
+                    "text"=>$email,
                     "type"=>"error"
                 ];
                 return mainModel::sweet_alert($alert);

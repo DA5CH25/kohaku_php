@@ -19,7 +19,7 @@
 
     <!-- Nav Item - Tables -->
     
-    <label><?php echo $_SESSION['firstname_sk']; ?></label>
+    <!--<label><?php echo $_SESSION['firstname_sk']; ?></label>-->
     <li class="nav-item">
         <a class="nav-link" href="index.php">
             <i class="fas fa-house-user"></i>

@@ -28,10 +28,10 @@ class viewsModel{
             $content="login";
         //si vistas es igual a index
         }elseif($views =="index"){
-            $content="login";
-        //de lo contario  sino hay nada definido por defecto muestre el logn
+            $content="index";
+        //de lo contario  sino hay nada definido por defecto muestre el login
         }else {
-            $content="login";
+            $content="index";
         }
         return $content;
     }
