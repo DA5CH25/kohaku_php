@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="vendor/sweet-alert/sweetalert2.css">
     <!-- <link href="./views/css/kohaku.css" rel="stylesheet"> -->
      <!-- Se modifica el link con la variable SERVERURL"> -->
-    <link href="<?php echo SERVERURL; ?>./views/css/kohaku.css" rel="stylesheet">
-    <link href="<?php echo SERVERURL; ?>./views/css/calendar.css" rel="stylesheet">
+    <link href="<?php echo SERVERURL; ?>views/css/kohaku.css" rel="stylesheet">
+    <link href="<?php echo SERVERURL; ?>views/css/calendar.css" rel="stylesheet">
     <?php include "views/modules/script.php"; ?>
 </head>
 
@@ -46,7 +46,9 @@
             //si no, me incluye todo el contenida de la página
         else:
             //iniciar seión
-            @session_start(['name'=>'SK']);
+            require_once "./controllers/controllerLogin.php";
+		    $login = new controllerLogin();
+            @session_start(['name'=>'sk']); 
     ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -81,7 +83,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Kohaku 2020</span>
+                        <span>Copyright &copy; Kohaku 2021</span>
                     </div>
                 </div>
             </footer>

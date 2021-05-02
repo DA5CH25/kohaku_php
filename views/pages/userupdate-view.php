@@ -22,11 +22,11 @@
 			  $tipo_usuario_administrador="1";
 			  $tipo_usuario_alumno="3";
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_alumno){
-			      include "views/modules/selecionarClasesAlumno.php";
+			      include "views/modules/useredituser.php";
 			     
 			  }
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_administrador){
-			     include "views/modules/agendarClasesAdministrador.php";
+			     include "views/modules/PAGINA NUEVA CAMBIAR ADMIN.php";
 			  }
 			}
 			?>
