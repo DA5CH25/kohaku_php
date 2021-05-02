@@ -117,7 +117,7 @@
 											<div class="header-user">
 												<img src="./vendor/img/user24.png" alt="Admin Template">
 											</div>
-											<h5>Julie Sweet</h5>
+											<h5><?php echo $_SESSION['firstname_sk']; ?></h5>
 											<p>Admin</p>
 										</div>
 										<a href="user-profile.html"><i class="icon-user1"></i> My Profile</a>
@@ -138,18 +138,12 @@
 						<li class="breadcrumb-item active">Admin Dashboard</li>
 					</ol>
 
-					<ul class="app-actions">
+					<!--<ul class="app-actions">
 						<li>
 							<a href="#" id="reportrange">
 								<span class="range-text"></span>
-								<i class="icon-chevron-down"></i>	
 							</a>
 						</li>
-						<li>
-							<a href="#">
-								<i class="icon-export"></i>
-							</a>
-						</li>
-					</ul>
+					</ul>-->
 				</div>
 				<!-- Page header end -->

@@ -41,19 +41,14 @@
             require_once "./controllers/controllerLogin.php";
 		    $login = new controllerLogin();
             @session_start(['name'=>'sk']); 
-            require_once "./views/formulario.php";
-    ?>
-    <!-- Page Wrapper -->
-    
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-  
-
-    <!-- Logout Modal-->
-   
-  <!--cierra la etiqueta del if-->          
-    <?php endif; ?>
+            if(isset($_SESSION['firstname_sk']) && $_SESSION['firstname_sk']!=""):
+                require_once "./views/formulario.php";
+            else:
+                $url = SERVERURL."";
+                header('Location: ' .  $url );
+            endif;
+            
+        endif; ?>
 </body>
 
 
