@@ -27,22 +27,23 @@ $base_url='vendor/calendario/';
     <script src="<?=$base_url?>js/bootstrap-datetimepicker.js"></script>
     <link rel="stylesheet" href="<?=$base_url?>css/bootstrap-datetimepicker.min.css" />
     
-
+<div class="card">
+<div style="padding-left: 100px;padding-right: 100px;padding-top: 30px">
     
      <h1>Mis Clases</h1>
         <div class="row">
             <!--<div class="page-header"><h4></h4></div>-->
             <div class="pull-left form-inline"><br>
                 <div class="btn-group">
-                    <button class="btn btn-primary" data-calendar-nav="prev"><i class="fa fa-arrow-left"></i>  </button>
+                    <button class="btn btn-primary btn-rounded" data-calendar-nav="prev"><i class="fa fa-arrow-left"></i>  </button>
                     <button class="btn" data-calendar-nav="today">Hoy</button>
-                    <button class="btn btn-primary" data-calendar-nav="next"><i class="fa fa-arrow-right"></i>  </button>
+                    <button class="btn btn-primary btn-rounded" data-calendar-nav="next"><i class="fa fa-arrow-right"></i>  </button>
                 </div>
                 <div class="btn-group">
-                    <button class="btn btn-warning" data-calendar-view="year">Año</button>
-                    <button class="btn btn-warning active" data-calendar-view="month">Mes</button>
-                    <button class="btn btn-warning" data-calendar-view="week">Semana</button>
-                    <button class="btn btn-warning" data-calendar-view="day">Dia</button>
+                    <button class="btn btn-warning btn-rounded" data-calendar-view="year">Año</button>
+                    <button class="btn btn-warning active btn-rounded" data-calendar-view="month">Mes</button>
+                    <button class="btn btn-warning btn-rounded" data-calendar-view="week">Semana</button>
+                    <button class="btn btn-warning btn-rounded" data-calendar-view="day">Dia</button>
                 </div>
             </div>
            
@@ -67,7 +68,11 @@ $base_url='vendor/calendario/';
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-        <br/> <h1>Seleccionar clases</h1>
+           </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="card">
+<div style="padding-left: 100px;padding-right: 100px;padding-top: 30px">
+        <br/> <h2>Incribirse a clases</h2>
     
     <table class="table">
   <thead>
@@ -85,7 +90,7 @@ $base_url='vendor/calendario/';
    $idUsuarioSesion=$_SESSION['userid_sk'];
        $sql="select c.titulo,c.inicio_normal,c.final_normal, u.nombre, c.id from clase c 
              inner join usuario u on u.id_usuario=c.id_instructor 
-             where c.id not in(select uc.clases_id_clases from usuario_has_clase uc where uc.usuario_id_usuario=".$idUsuarioSesion.");";
+             where c.id not in(select uc.clases_id_clases from usuario_has_clases uc where uc.usuario_id_usuario=".$idUsuarioSesion.");";
        if ($conexion->query($sql)->num_rows)
        {
         $resultadoConsulta = $conexion->query($sql);
@@ -106,9 +111,9 @@ $base_url='vendor/calendario/';
        ?>
   </tbody>
 </table>
-    
+      </div>
        
-  
+   </div>
 
 <script src="<?=$base_url?>js/underscore-min.js"></script>
     <script src="<?=$base_url?>js/calendar.js"></script>

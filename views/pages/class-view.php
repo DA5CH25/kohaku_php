@@ -1,14 +1,6 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
-		<div class="d-sm-flex align-items-center justify-content-start mb-4">
-            
-            <a href="#" class="d-none mr-2 d-sm-inline-block btn btn-sm btn-kohaku shadow-sm">
-				<i class="fas fa-download fa-sm text-white-50"></i> Crear Clase
-            </a>
-			<a href="#" class="d-none mr-2 d-sm-inline-block btn btn-sm btn-kohaku shadow-sm">
-				<i class="fas fa-download fa-sm text-white-50"></i> Registar Clase
-            </a>
-        </div>
+		
 		
     <!-- Content Row -->
     <div class="row">
@@ -19,13 +11,10 @@
 			<?php
 			if(isset($_SESSION['usertype_sk']))
 			{
-			  $tipo_usuario_administrador="1";
-			  $tipo_usuario_alumno="3";
-			  if( $_SESSION['usertype_sk']==$tipo_usuario_alumno){
+			  $TIPO_USUARIO_ALUNMO="3";
+			  if( $_SESSION['usertype_sk']==$TIPO_USUARIO_ALUNMO){
 			      include "views/modules/selecionarClasesAlumno.php";
-			     
-			  }
-			  if( $_SESSION['usertype_sk']==$tipo_usuario_administrador){
+			  }else{
 			     include "views/modules/agendarClasesAdministrador.php";
 			  }
 			}

@@ -75,10 +75,11 @@ if (isset($_POST['from']))
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <link rel="stylesheet" type="text/css" href="<?=$base_url?>css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/fonts/style.css">
+    <link rel="stylesheet" href="vendor/css/main.css">
+
     <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
     <link href="<?=$base_url?>css/font-awesome.min.css" rel="stylesheet">
     <script type="text/javascript" src="<?=$base_url?>js/es-ES.js"></script>
@@ -89,38 +90,31 @@ if (isset($_POST['from']))
     <script src="<?=$base_url?>js/bootstrap-datetimepicker.js"></script>
     
   
-    <script type="text/javascript">
-        $(function () {
-            $('#from').datetimepicker({
-                language: 'es',
-                minDate: new Date()
-            });
-            $('#to').datetimepicker({
-                language: 'es',
-                minDate: new Date()
-            });
-        });
-    </script>
-</head>
-<body style="background: white;">
-    <div class="container">
+<div class="card">
+								<div class="card-header">
+									<div class="card-title">
+									
+									</div>
+								</div>
+								<div class="card-body">
+    <div style="padding-left: 100px;padding-right: 100px;padding-top: 30px">
         <div class="row">
             <!--<div class="page-header"><h4></h4></div>-->
             <div class="pull-left form-inline"><br>
                 <div class="btn-group">
-                    <button class="btn btn-primary" data-calendar-nav="prev"><i class="fa fa-arrow-left"></i>  </button>
+                    <button class="btn btn-primary btn-rounded" data-calendar-nav="prev"><i class="fa fa-arrow-left"></i>  </button>
                     <button class="btn" data-calendar-nav="today">Hoy</button>
-                    <button class="btn btn-primary" data-calendar-nav="next"><i class="fa fa-arrow-right"></i>  </button>
+                    <button class="btn btn-primary btn-rounded" data-calendar-nav="next"><i class="fa fa-arrow-right"></i>  </button>
                 </div>
                 <div class="btn-group">
-                    <button class="btn btn-warning" data-calendar-view="year">Año</button>
-                    <button class="btn btn-warning active" data-calendar-view="month">Mes</button>
-                    <button class="btn btn-warning" data-calendar-view="week">Semana</button>
-                    <button class="btn btn-warning" data-calendar-view="day">Dia</button>
+                    <button class="btn btn-warning btn-rounded" data-calendar-view="year">Año</button>
+                    <button class="btn btn-warning active btn-rounded" data-calendar-view="month">Mes</button>
+                    <button class="btn btn-warning btn-rounded" data-calendar-view="week">Semana</button>
+                    <button class="btn btn-warning btn-rounded" data-calendar-view="day">Dia</button>
                 </div>
             </div>
             <div class="pull-right form-inline"><br>
-                <button class="btn btn-info" data-toggle='modal' data-target='#add_evento'>Añadir Evento</button>
+                <button class="btn btn-primary btn-rounded" data-toggle='modal' data-target='#add_evento'>Añadir Evento</button>
             </div>
         </div>
         <br><br><br>
@@ -266,11 +260,11 @@ if (isset($_POST['from']))
             <div class="modal-body">
                 <form action="" method="post">
                  <label for="from">Inicio</label>
-                   <input size="16" type="text" class="form-control" id="from" name="from" readonly>  
+                 <input type="datetime-local" class="form-control" id="from" name="from">
+                  
                       <br>
                      <label for="to">Final</label>  
-                    <input size="16" type="text" class="form-control" id="to" name="to" readonly>    
-                   
+                     <input type="datetime-local" class="form-control" id="to" name="to">
                     <br>
 
                     <label for="tipo">Seleccione Instructor</label>
@@ -301,8 +295,8 @@ if (isset($_POST['from']))
                    
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
-                  <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Agregar</button>
+                  <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+                  <button type="submit" class="btn btn-success btn-rounded"><i class="fa fa-check"></i> Agregar</button>
               </form>
                <script type="text/javascript">
                   $("#from").datetimepicker({
@@ -319,7 +313,8 @@ if (isset($_POST['from']))
           </div>
       </div>
   </div>
+    </div>
+      </div>
 </div>
-</body>
-</html>
+
 
