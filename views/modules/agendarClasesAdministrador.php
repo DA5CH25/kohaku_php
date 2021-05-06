@@ -1,5 +1,5 @@
 <?php
-
+ 
 
 // Definimos nuestra zona horaria
 date_default_timezone_set("America/Santiago");
