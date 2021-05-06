@@ -4,7 +4,7 @@
 				<!-- Sidebar brand start  -->
 				<div class="sidebar-brand">
 					<a href="../Kohaku_php" class="logo">
-						<img src="./views/assets/img/logokohakublancohorizontal.png" alt="Le Rouge Admin Dashboard" />
+						<img src="./vendor/img/logotipo.png" alt="Le Rouge Admin Dashboard" />
 					</a>
 				</div>
 				<!-- Sidebar brand end  -->
@@ -16,6 +16,12 @@
 					<div class="sidebar-menu">
 						<ul>
 							<li class="header-menu">General</li>
+							<li>
+								<a href="/Kohaku_php/?page=News">
+									<i class="icon-file-text"></i>
+									<span class="menu-text">Noticias</span>
+								</a>
+							</li>
 							<li class="sidebar-dropdown active">
 								<a href="#">
 									<i class="icon-devices_other"></i>

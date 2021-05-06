@@ -10,15 +10,15 @@
 					</div>
 					<div class="header-items">
 						<!-- Custom search start -->
-						<div class="custom-search">
+						<!--<div class="custom-search">
 							<input type="text" class="search-query" placeholder="Search here ...">
 							<i class="icon-search1"></i>
-						</div>
+						</div>-->
 						<!-- Custom search end -->
 
 						<!-- Header actions start -->
 						<ul class="header-actions">
-							<li class="dropdown">
+							<!--<li class="dropdown">
 								<a href="#" id="notifications" data-toggle="dropdown" aria-haspopup="true">
 									<i class="icon-box"></i>
 								</a>
@@ -53,7 +53,7 @@
 										</li>
 									</ul>
 								</div>
-							</li>
+							</li>-->
 							<li class="dropdown">
 								<a href="#" id="notifications" data-toggle="dropdown" aria-haspopup="true">
 									<i class="icon-bell"></i>
@@ -107,7 +107,7 @@
 								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
 									<span class="user-name"><?php echo $_SESSION['firstname_sk']; ?></span>
 									<span class="avatar">
-										<img src="./vendor/img/user24.png" alt="avatar">
+										<img src="./vendor/img/user18.png" alt="avatar">
 										<span class="status busy"></span>
 									</span>
 								</a>
@@ -120,9 +120,9 @@
 											<h5><?php echo $_SESSION['firstname_sk']; ?></h5>
 											<p>Admin</p>
 										</div>
-										<a href="user-profile.html"><i class="icon-user1"></i> My Profile</a>
+										<a href="/Kohaku_php/?page=News"><i class="icon-user1"></i> My Profile</a>
 										<a href="account-settings.html"><i class="icon-settings1"></i> Account Settings</a>
-										<a href="login.html"><i class="icon-log-out1"></i> Sign Out</a>
+										<a href="http://localhost/kohaku_php/login"><i class="icon-log-out1"></i> Sign Out</a>
 									</div>
 								</div>
 							</li>
@@ -135,7 +135,7 @@
 				<div class="page-header">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item">Home</li>
-						<li class="breadcrumb-item active">Admin Dashboard</li>
+						<li class="breadcrumb-item active"> <?php echo $_GET['page'];?></li>
 					</ol>
 
 					<!--<ul class="app-actions">
