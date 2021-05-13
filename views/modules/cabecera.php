@@ -115,7 +115,7 @@
 									<div class="header-profile-actions">
 										<div class="header-user-profile">
 											<div class="header-user">
-												<img src="./vendor/img/user24.png" alt="Admin Template">
+												<img src="./vendor/img/user18.png" alt="Admin Template">
 											</div>
 											<h5><?php echo $_SESSION['firstname_sk']; ?></h5>
 											<p>Admin</p>

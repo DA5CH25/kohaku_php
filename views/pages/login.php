@@ -35,13 +35,15 @@
 	<div class="form-container sign-up-container" overflow: auto >
 
 		<form action="" method="post" overflow: auto>
-			<h1 style="color: #393939">Crear cuenta</h1>
+			<h1 style="color: #FFFFFF">Crear cuenta</h1>
 			<div class="social-container">
 
 			</div>
-			<span>registrarte con tu correo electronico</span>
-			<input type="text" placeholder="Nombre" id="first_name" name= "first_name" />
-			<input type="text" placeholder="Apellido" id="last_name" name="last_name">
+			<!--<span>Registrarte con tu correo electronico</span>-->
+			<span>Nombre</span>
+			<input type="text" placeholder="Ejemplo" id="first_name" name= "first_name" />
+			<span>Apellido</span>
+			<input type="text" placeholder="Ejemplo" id="last_name" name="last_name">
 			<!--<select  name = "id_type" name = "id_type">
 				<option value="0" selected>tipo de documento</option>
 				<option value="1">Cedula de Ciudadadania</option>
@@ -51,9 +53,12 @@
 			<input type="text" placeholder="Direccion" id="direction" name="direction"/>
 			<input type="text" placeholder="Telefono Fijo" id="phone" name="phone"/>
 			<input type="text" placeholder="celular" id="celphone"name="cellphone"/>-->
-			<input type="email" placeholder="Correo electronico" id="email" name="email"/>
-			<input type="password" placeholder="Contraseña" id="pass" name="pass"/>
-			<input type="password" placeholder="Confirmar contraseña" id="pass_confirm" name= "pass_confirm"/>
+			<span>Correo electronico</span>
+			<input type="email" placeholder="Ejemplo@Ejemplo.com" id="email" name="email"/>
+			<span>Contraseña</span>
+			<input type="password" placeholder="Ejemplo" id="pass" name="pass"/>
+			<span>Confirma contraseña</span>
+			<input type="password" placeholder="Ejemplo" id="pass_confirm" name= "pass_confirm"/>
 
 			<button type= "submit" value ="Registro">Registrarte</button>
 
@@ -61,7 +66,7 @@
 	</div>
 	<div class="form-container sign-in-container">
 		<form action="" method="POST" autocomplete="off">
-			<h1 style="color: #393939">Iniciar sesión</h1>
+			<h1 style="color: #FFFFFF">Iniciar sesión</h1>
 			<div class="social-container">
 				<!--<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
@@ -72,7 +77,7 @@
 			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="wilson28@gmail.com" />
 			<span>Contraseña</span>
 			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass" value="55555" />
-		<a href="#">Olvidaste tu contraseña?</a>
+		<a style="color: #FFFFFF" href="#">Olvidaste tu contraseña?</a>
 			<button type="submit" value="login">Ingresar</button>
 		</form>
 	</div>
