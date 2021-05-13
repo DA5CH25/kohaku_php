@@ -27,6 +27,13 @@
         <div class="card h-100">
             <div class="card-header">
                 <div class="card-title">Noticias</div>
+                <br>
+                <br>
+                    <div class="list-group">
+                        <a href="contacts.html" class="list-group-item" style="color: #26AAD8">Tienes clases pendientes</a>
+                        <a href="/Kohaku_php/?page=class" class="list-group-item" style="color: #26AAD8">Hay informacion pendiente por subir</a>
+                        <a href="/Kohaku_php/?page=bitacora" class="list-group-item" style="color: #26AAD8">Tienes nuevas anotaciones en la bitacora</a>
+                    </div>
             </div>
             
         </div>
