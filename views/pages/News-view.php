@@ -30,9 +30,9 @@
                 <br>
                 <br>
                     <div class="list-group">
-                        <a href="contacts.html" class="list-group-item" style="color: #26AAD8">Tienes clases pendientes</a>
-                        <a href="/Kohaku_php/?page=class" class="list-group-item" style="color: #26AAD8">Hay informacion pendiente por subir</a>
-                        <a href="/Kohaku_php/?page=bitacora" class="list-group-item" style="color: #26AAD8">Tienes nuevas anotaciones en la bitacora</a>
+                        <a href="contacts.html" class="alert alert-info alert-dismissible fade show">Tienes clases pendientes</a>
+                        <a href="/Kohaku_php/?page=class" class="alert alert-info alert-dismissible fade show">Hay informacion pendiente por subir</a>
+                        <a href="/Kohaku_php/?page=bitacora" class="alert alert-info alert-dismissible fade show">Tienes nuevas anotaciones en la bitacora</a>
                     </div>
             </div>
             
