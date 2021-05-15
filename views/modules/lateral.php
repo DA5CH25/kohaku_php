@@ -3,8 +3,8 @@
 				
 				<!-- Sidebar brand start  -->
 				<div class="sidebar-brand">
-					<a href="index.html" class="logo">
-						<img src="./views/assets/img/logokohakublancohorizontal.png" alt="Le Rouge Admin Dashboard" />
+					<a href="../Kohaku_php" class="logo">
+						<img src="./vendor/img/logotipo.png" alt="Le Rouge Admin Dashboard" />
 					</a>
 				</div>
 				<!-- Sidebar brand end  -->
@@ -16,6 +16,12 @@
 					<div class="sidebar-menu">
 						<ul>
 							<li class="header-menu">General</li>
+							<li>
+								<a href="/Kohaku_php/?page=News">
+									<i class="icon-file-text"></i>
+									<span class="menu-text">Noticias</span>
+								</a>
+							</li>
 							<li class="sidebar-dropdown active">
 								<a href="#">
 									<i class="icon-devices_other"></i>
@@ -38,192 +44,16 @@
 									</ul>
 								</div>
 							</li>
-							<li class="sidebar-dropdown">
-								<a href="#">
+							<li>
+								<a href="/Kohaku_php/?page=class">
 									<i class="icon-calendar1"></i>
-									<span class="menu-text">Calendars</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-											<a href="./vendor/calendar.html">Daygrid View</a>
-										</li>
-										<li>
-											<a href="./vendor/calendar-external-draggable.html">External Draggable</a>
-										</li>
-										<li>
-											<a href="./vendor/calendar-google.html">Google Calendar</a>
-										</li>
-										<li>
-											<a href="calendar-list-view.html">List View</a>
-										</li>
-										<li>
-											<a href="calendar-selectable.html">Selectable</a>
-										</li>
-										<li>
-											<a href="calendar-week-numbers.html">Week Numbers</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li>
-								<a href="contacts.html">
-									<i class="icon-phone1"></i>
-									<span class="menu-text">Contacts</span>
+									<span class="menu-text">Clases</span>
 								</a>
 							</li>
 							<li>
-								<a href="documents.html">
+								<a href="/Kohaku_php/?page=bitacora">
 									<i class="icon-documents"></i>
-									<span class="menu-text">Documents</span>
-								</a>
-							</li>
-							<li class="sidebar-dropdown">
-								<a href="#">
-									<i class="icon-layout"></i>
-									<span class="menu-text">Layouts</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-											<a href="default-layout.html">Default Layout</a>
-										</li>
-										<li>
-											<a href="slim-sidebar.html">Slim Layout</a>
-										</li>
-										<li>
-											<a href="card-options.html">Card Options</a>
-										</li>
-										<li>
-											<a href="drag-drop-cards.html">Drag and Drop Cards</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li class="sidebar-dropdown">
-								<a href="#">
-									<i class="icon-book-open"></i>
-									<span class="menu-text">Pages</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-											<a href="account-settings.html">Account Settings</a>
-										</li>
-										<li>
-											<a href="blog.html">Blog</a>
-										</li>
-										<li>
-											<a href="cards.html">Cards</a>
-										</li>
-										<li>
-											<a href="datepickers.html">Datepickers</a>
-										</li>
-										<li>
-											<a href="faq.html">Faq</a>
-										</li>
-										<li>
-											<a href="invoice.html">Invoice</a>
-										</li>
-										<li>
-											<a href="search-results.html">Search Results</a>
-										</li>
-										<li>
-											<a href="timeline.html">Timeline</a>
-										</li>
-										<li>
-											<a href="comments.html">Comments</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li>
-							<li>
-								<a href="user-profile.html">
-									<i class="icon-user1"></i>
-									<span class="menu-text">User Profile</span>
-								</a>
-							</li>
-							<li>
-								<a href="tasks.html">
-									<i class="icon-check-circle"></i>
-									<span class="menu-text">Tasks</span>
-								</a>
-							</li>
-							<li class="header-menu">Forms</li>
-							<li class="sidebar-dropdown">
-								<a href="#">
-									<i class="icon-edit1"></i>
-									<span class="menu-text">Inputs</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-											<a href="form-inputs.html">Form Inputs</a>
-										</li>
-										<li>
-											<a href="input-groups.html">Input Groups</a>
-										</li>
-										<li>
-											<a href="check-radio.html">Check Boxes</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li class="sidebar-dropdown">
-								<a href="#">
-									<i class="icon-file-text"></i>
-									<span class="menu-text">Contact Forms</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-											<a href="contact.html">Contact Form</a>
-										</li>
-										<li>
-											<a href="contact2.html">Contact Form #2</a>
-										</li>
-										<li>
-											<a href="contact3.html">Contact Form #3</a>
-										</li>
-										<li>
-											<a href="contact4.html">Contact Form #4</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li>
-								<a href="bs-select.html">
-									<i class="icon-pocket"></i>
-									<span class="menu-text">BS Select</span>
-								</a>
-							</li>
-							<li>
-								<a href="editor.html">
-									<i class="icon-edit-3"></i>
-									<span class="menu-text">Editor</span>
-								</a>
-							</li>							
-							<li class="sidebar-dropdown">
-								<a href="#">
-									<i class="icon-alert-triangle"></i>
-									<span class="menu-text">Error Pages</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-											<a href="error.html">404</a>
-										</li>
-										<li>
-											<a href="error2.html">505</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li>
-								<a href="coming-soon.html">
-									<i class="icon-schedule"></i>
-									<span class="menu-text">Coming Soon</span>
+									<span class="menu-text">Bitacora</span>
 								</a>
 							</li>
 						</ul>

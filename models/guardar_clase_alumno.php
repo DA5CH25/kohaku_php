@@ -11,7 +11,7 @@ if(isset($_POST) )
    
     $id_alumno=$_POST['id_alumno'];
     $id_clase=$_POST['id_clase'];
-    $query="INSERT INTO usuario_has_clase VALUES('$id_alumno','$id_clase')";
+    $query="INSERT INTO usuario_has_clases VALUES('$id_alumno','$id_clase')";
  
     
     // Ejecutamos nuestra sentencia sql

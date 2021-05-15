@@ -9,7 +9,7 @@ include '../config/config.php';
 $idUsuarioSesion=$_GET['id_user'];
 
 // Sentencia sql para traer los agenda desde la base de datos
-$sql="SELECT c.id, c.titulo as title, c.descripcion as body, c.start, c.end, c.inicio_normal, c.final_normal FROM clase c where c.id in(select uc.clases_id_clases from usuario_has_clase uc where uc.usuario_id_usuario=".$idUsuarioSesion.");"; 
+$sql="SELECT c.id, c.titulo as title, c.descripcion as body, c.start, c.end, c.inicio_normal, c.final_normal FROM clase c where c.id in(select uc.clases_id_clases from usuario_has_clases uc where uc.usuario_id_usuario=".$idUsuarioSesion.");"; 
 
 
 // Verificamos si existe un dato

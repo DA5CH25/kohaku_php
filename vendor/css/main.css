@@ -327,7 +327,7 @@ h3.styled {
   right: 0;
   background: #ffffff;
   border-bottom: 1px solid #e0e3e8;
-  min-height: 50px;
+  min-height: 75px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -661,8 +661,8 @@ ul.header-tasks:last-child {
         display: flex;
         align-items: center; }
         .page-wrapper .sidebar-wrapper .sidebar-brand .logo img {
-          max-width: 160px;
-          max-height: 50px;
+          max-width: 200px;
+          max-height: 150px;
           -webkit-border-radius: 0px;
           -moz-border-radius: 0px;
           border-radius: 0px; }
