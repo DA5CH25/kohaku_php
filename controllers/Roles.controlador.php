@@ -1,6 +1,6 @@
 <?php
-require_once '../models/Rol.clase.php';
-require_once '../models/Roles.dao.php';
+require_once './models/Rol.clase.php';
+require_once './models/Roles.dao.php';
 
 switch ($_GET['a']) {
 	case 'ingr':

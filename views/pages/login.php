@@ -5,14 +5,17 @@
 		$login = new controllerLogin();
 		$url =  $login->start_session_controller();
 		header('Location: ' .  $url );
-		//echo $url;
+		echo $url;
 		//var_dump($_SESSION);
 	}
 	elseif(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_confirm']) && $_POST['first_name']!="" && $_POST['last_name']!="" && $_POST['email']!="" && $_POST['pass']!="" && $_POST['pass_confirm']!="")
 	{
 		require_once "./controllers/controllerRegister.php";
 		$register = new controllerRegister();
-		echo $register->add_user_controller();
+		//echo $register->add_user_controller();
+		$url = $register->add_user_controller();
+		header('Location: ' .  $url );
+		echo $url;
 	}
 	else{
 		require_once"./controllers/controllerLogin.php";
@@ -26,7 +29,8 @@
 <head>
   <meta charset="UTF-8">
   <title>KOHAKU</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./views/css/loginstyle.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+  <link rel="stylesheet" href="./views/css/loginstyle.css">
 
 </head>
 <body>
@@ -104,6 +108,7 @@
 </footer>
 <!-- partial -->
   <script  src="./views/js/loginscript.js"></script>
+  <script  src="./views/js/main.js"></script>
 
 </body>
 

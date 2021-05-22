@@ -11,7 +11,7 @@ class Rol {
     public $clave;
 
 	public function __construct () {
-		$this->id_usuario = 0;
+		$this->id_usuario = '';
 		$this->nombre = '';
         $this->apellido = '';
         $this->numero_identificacion = '';

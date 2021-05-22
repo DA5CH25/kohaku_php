@@ -1,6 +1,6 @@
 <?php
 require_once './models/Conexion.clase.php';
-require_once './models/Rol.clase.php';
+require_once './models/Rol.clase.php'; 
 
 class RolesDAO {
 	public static function listarDatos () {
@@ -12,7 +12,7 @@ class RolesDAO {
 
 	public static function ingresarDato ($rol) {
 		$con = new Conexion();
-		$con->ejecutarActualizacion("INSERT INTO usuario (Nombre) VALUES ('$rol->nombre')");
+		$con->ejecutarActualizacion("INSERT INTO usuario (nombre, apellido, numero_identificacion, telefono_fijo, telefono_movil, direccion,correo_electronico, clave ) VALUES ('$rol->nombre','$rol->apellido','$rol->numero_identificacion','$rol->telefono_fijo','$rol->telefono_movil','$rol->direccion', '$rol->correo_electronico','$rol->clave')");
 		$con->cerrarConexion();
 	}
 
