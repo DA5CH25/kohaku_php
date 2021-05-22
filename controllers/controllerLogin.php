@@ -36,9 +36,10 @@
                 $_SESSION['email_sk']=$userdata['correo_electronico'];
                 $_SESSION['usertype_sk']=$userdata['tipo_usuario_id_tipo_usuario'];
                 $_SESSION['userid_sk']=$userdata['id_usuario'];
+                $_SESSION['rango_sk']=$userdata['rango_usuario_id_rango_usuario'];
 
                 //Se agrega este código para acceder a la vista del calendario
-                $url=SERVER_RELATIVE_URL."News";
+                $url=SERVER_RELATIVE_URL."dashboard";
                 
                
                 return $url;

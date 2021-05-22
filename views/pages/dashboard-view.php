@@ -21,11 +21,11 @@
 			{
 			  $tipo_usuario_administrador="1";
 			  $tipo_usuario_alumno="3";
-			  if( $_SESSION['usertype_sk']==$tipo_usuario_alumno){
-			      include "views/modules/noti.php";			     
-			  }
+			  if( $_SESSION['usertype_sk']==$tipo_usuario_alumno):?>
+				<meta http-equiv="refresh" content="0;url=http://localhost/kohaku_php/?page=home">
+				<?php endif;
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_administrador){
-				include "views/modules/noti.php";
+				include "views/modules/dashboard.php";
 			  }
 			}
 			?>			

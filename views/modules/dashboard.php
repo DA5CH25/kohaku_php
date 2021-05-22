@@ -29,7 +29,7 @@ require_once './models/Roles.dao.php' ?>
 									<i class="icon-shopping-cart1"></i>
 								</div>
 								<div class="sale-num">
-									<h3>2500</h3>
+									<h3>250</h3>
 									<p>Compras</p>
 								</div>
 							</div>
@@ -40,7 +40,7 @@ require_once './models/Roles.dao.php' ?>
 									<i class="icon-shopping-bag1"></i>
 								</div>
 								<div class="sale-num">
-									<h3>7500</h3>
+									<h3>75</h3>
 									<p>Clases</p>
 								</div>
 							</div>
@@ -51,23 +51,20 @@ require_once './models/Roles.dao.php' ?>
 									<i class="icon-activity"></i>
 								</div>
 								<div class="sale-num">
-									<h3>3500</h3>
+									<h3>35</h3>
 									<p>Cinturones Negros</p>
 								</div>
 							</div>
 						</div>
 					</div>
-
-                    <div class="row gutters">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
-							<div class="jumbotron">
-								<h1 class="display-4 text-primary">Bienvenido!</h1>
-								<p class="lead">Titulo Noticia</p>
-								<p>Parrafo noticia</p>
-								<div class="mb-3"></div>
+					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Afluencia por dia</div>
+								</div>
+								<div class="card-body pb-0 pt-0">
+									<div id="by-channel"></div>
 							</div>
-
 						</div>
 					</div>
 

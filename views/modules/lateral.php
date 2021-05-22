@@ -15,19 +15,22 @@
 					<!-- sidebar menu start -->
 					<div class="sidebar-menu">
 						<ul>
+							<?php
+								if( $_SESSION['usertype_sk']==1):
+							?>
 							<li class="header-menu">Menu</li>
 							<li class="sidebar-dropdown active">
-								<a href="/Kohaku_php/?page=noti">
+								<a href="/Kohaku_php/?page=dashboard">
 									<i class="icon-file-text"></i>
-									<span class="menu-text">Noticias</span>
+									<span class="menu-text">dashboard</span>
 								</a>
-								<div class="sidebar-submenu">
+								<!--<div class="sidebar-submenu">
 									<ul>
 										<li>
 											<a href="/Kohaku_php/?page=crearnoti" class="current-page">Crear Noticia</a>
 										</li>										
 									</ul>
-								</div>
+								</div>-->
 							</li>
 							<li class="sidebar-dropdown active">
 								<a href="#">
@@ -48,6 +51,20 @@
 									</ul>
 								</div>
 							</li>
+							<?php endif;
+							?>
+							<li>
+								<a href="/Kohaku_php/?page=home">
+									<i class="icon-user1"></i>
+									<span class="menu-text">perfil</span>
+								</a>
+							</li>
+							<li>
+								<a href="/Kohaku_php/?page=home">
+									<i class="icon-devices_other"></i>
+									<span class="menu-text">Editar perfil</span>
+								</a>
+							</li>
 							<li>
 								<a href="/Kohaku_php/?page=class">
 									<i class="icon-calendar1"></i>
@@ -58,12 +75,6 @@
 								<a href="/Kohaku_php/?page=bitacora">
 									<i class="icon-documents"></i>
 									<span class="menu-text">Bitacora</span>
-								</a>
-							</li>
-							<li>
-								<a href="/Kohaku_php/?page=News">
-									<i class="icon-user1"></i>
-									<span class="menu-text">Usuario</span>
 								</a>
 							</li>
 						</ul>
