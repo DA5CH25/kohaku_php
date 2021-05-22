@@ -36,9 +36,6 @@
 
 		<form action="" method="post" overflow: auto>
 			<h1 style="color: #FFFFFF">Crear cuenta</h1>
-			<div class="social-container">
-
-			</div>
 			<!--<span>Registrarte con tu correo electronico</span>-->
 			<span>Nombre</span>
 			<input type="text" placeholder="Ejemplo" id="first_name" name= "first_name" />

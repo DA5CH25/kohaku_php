@@ -7,7 +7,7 @@
 		<!-- Content Row -->
 		
 		<!-- Area Chart -->
-		<div class="col-xl-8 col-lg-7">
+		<div class="col-xl-12 col-lg-12">
 			<?php
 			if(isset($_SESSION['usertype_sk']))
 			{

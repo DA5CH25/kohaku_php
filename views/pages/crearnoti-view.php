@@ -22,16 +22,13 @@
 			  $tipo_usuario_administrador="1";
 			  $tipo_usuario_alumno="3";
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_alumno){
-			      include "views/modules/useredituser.php";
-			     
+			      include "views/modules/crearnoti.php";			     
 			  }
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_administrador){
-				include "views/modules/useredituser.php";
+				include "views/modules/crearnoti.php";
 			  }
 			}
-			?>
-
-			
+			?>			
 		</div>
 	</div>  
 </div>

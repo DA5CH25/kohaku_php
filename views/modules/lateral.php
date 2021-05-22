@@ -15,12 +15,22 @@
 					<!-- sidebar menu start -->
 					<div class="sidebar-menu">
 						<ul>
-							<li class="header-menu">General</li>
-							<li>
-								<a href="/Kohaku_php/?page=News">
+							<?php
+								if( $_SESSION['usertype_sk']==1):
+							?>
+							<li class="header-menu">Menu</li>
+							<li class="sidebar-dropdown active">
+								<a href="/Kohaku_php/?page=dashboard">
 									<i class="icon-file-text"></i>
-									<span class="menu-text">Noticias</span>
+									<span class="menu-text">dashboard</span>
 								</a>
+								<!--<div class="sidebar-submenu">
+									<ul>
+										<li>
+											<a href="/Kohaku_php/?page=crearnoti" class="current-page">Crear Noticia</a>
+										</li>										
+									</ul>
+								</div>-->
 							</li>
 							<li class="sidebar-dropdown active">
 								<a href="#">
@@ -30,19 +40,30 @@
 								<div class="sidebar-submenu">
 									<ul>
 										<li>
-											<a href="./vendor/index.html" class="current-page">Alumnos</a>
+											<a href="/Kohaku_php/?page=userupdate" class="current-page">Alumnos</a>
 										</li>
 										<li>
-											<a href="./vendor/sales-dashboard.html">Crear Alumno</a>
+											<a href="/Kohaku_php/?page=usercreate">Crear Alumno</a>
 										</li>
 										<li>
-											<a href="./vendor/crm-dashboard.html">Editar Alumno</a>
-										</li>
-										<li>
-											<a href="./vendor/ecommerce-dashboard.html">Editar Perfil</a>
-										</li>
+											<a href="/Kohaku_php/?page=useredit">Editar Alumno</a>
+										</li>										
 									</ul>
 								</div>
+							</li>
+							<?php endif;
+							?>
+							<li>
+								<a href="/Kohaku_php/?page=home">
+									<i class="icon-user1"></i>
+									<span class="menu-text">perfil</span>
+								</a>
+							</li>
+							<li>
+								<a href="/Kohaku_php/?page=home">
+									<i class="icon-devices_other"></i>
+									<span class="menu-text">Editar perfil</span>
+								</a>
 							</li>
 							<li>
 								<a href="/Kohaku_php/?page=class">
