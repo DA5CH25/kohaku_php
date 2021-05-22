@@ -14,7 +14,7 @@
             $direction="n/a";
             $lessons=0;
             $user_type=3;
-            $id_type=0;
+            $id_type=5;
             $user_rank=10;
             $user_status=1;
             $sql=mainModel::connect()->prepare("INSERT INTO usuario(id_usuario,nombre,apellido,numero_identificacion,telefono_fijo,telefono_movil,direccion,correo_electronico,clases_restantes,clave,tipo_usuario_id_tipo_usuario,tipo_documento_id_tipo_documento,rango_usuario_id_rango_usuario,estado_usuario_id_estado_usuario) 

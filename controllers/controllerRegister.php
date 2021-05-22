@@ -61,8 +61,20 @@
                     ];
                     $saveAccount=modelRegister::add_user_model($dataRegisterCount);
                     // Comprobar si se registro la cuenta
-
                     if($saveAccount->rowCount()>=1){
+                    
+                        $_SESSION['firstname_sk']=$dataRegisterCount['first_name'];
+                        $_SESSION['lastname_sk']=$dataRegisterCount['last_name'];
+                        $_SESSION['email_sk']=$dataRegisterCount['email'];
+                        $_SESSION['usertype_sk']=3;
+                        $_SESSION['userid_sk']=$dataRegisterCount['user_code'];
+                        $_SESSION['rango_sk']=10;
+    
+                        //Se agrega este código para acceder a la vista principal
+                        $url=SERVER_RELATIVE_URL."dashboard";
+                    
+                   
+                        return $url;
                     }
                     else{
                         $alert=[
