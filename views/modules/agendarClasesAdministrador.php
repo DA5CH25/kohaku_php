@@ -1,5 +1,5 @@
 <?php
-
+ 
 
 // Definimos nuestra zona horaria
 date_default_timezone_set("America/Santiago");
@@ -103,7 +103,7 @@ if (isset($_POST['from']))
             <div class="pull-left form-inline"><br>
                 <div class="btn-group">
                     <button class="btn btn-primary btn-rounded" data-calendar-nav="prev"><i class="fa fa-arrow-left"></i>  </button>
-                    <button class="btn" data-calendar-nav="today">Hoy</button>
+                    <button class="btn " data-calendar-nav="today">Hoy</button>
                     <button class="btn btn-primary btn-rounded" data-calendar-nav="next"><i class="fa fa-arrow-right"></i>  </button>
                 </div>
                 <div class="btn-group">
@@ -114,7 +114,7 @@ if (isset($_POST['from']))
                 </div>
             </div>
             <div class="pull-right form-inline"><br>
-                <button class="btn btn-primary btn-rounded" data-toggle='modal' data-target='#add_evento'>Añadir Evento</button>
+                <button class="btn btn-info btn-rounded" data-toggle='modal' data-target='#add_evento'>Añadir Evento</button>
             </div>
         </div>
         <br><br><br>

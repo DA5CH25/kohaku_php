@@ -75,9 +75,9 @@
 			</div>
 			<span>Correo Electronico</span>
             <!-- name="loginemail" name="loginpass" -->
-			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="wilson28@gmail.com" />
+			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="" />
 			<span>Contraseña</span>
-			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass" value="55555" />
+			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass" value="" />
 		<a style="color: #FFFFFF" href="#">Olvidaste tu contraseña?</a>
 			<button type="submit" value="login">Ingresar</button>
 		</form>

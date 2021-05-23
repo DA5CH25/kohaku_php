@@ -28,6 +28,43 @@
 		************ -->
 		<!-- DateRange css -->
 		<link rel="stylesheet" href="./vendor/vendor/daterange/daterange.css" />
+		
+	<!--**************************
+			**************************
+				**************************
+							Required JavaScript Files
+				**************************
+			**************************
+		**************************-->
+		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<script src="./vendor/js/jquery.min.js"></script>
+		<script src="./vendor/js/bootstrap.bundle.min.js"></script>
+		<script src="./vendor/js/moment.js"></script>
+
+
+		<!-- *************
+			************ Vendor Js Files *************
+		************* -->
+		<!-- Slimscroll JS -->
+		<script src="./vendor/vendor/slimscroll/slimscroll.min.js"></script>
+		<script src="./vendor/vendor/slimscroll/custom-scrollbar.js"></script>
+
+		<!-- Daterange -->
+		<script src="./vendor/vendor/daterange/daterange.js"></script>
+		<script src="./vendor/vendor/daterange/custom-daterange.js"></script>
+
+		<!-- Polyfill JS -->
+		<script src="./vendor/vendor/polyfill/polyfill.min.js"></script>
+
+		<!-- Apex Charts -->
+		<script src="./vendor/vendor/apex/apexcharts.min.js"></script>
+		<script src="./vendor/vendor/apex/admin/visitors.js"></script>
+		<script src="./vendor/vendor/apex/admin/deals.js"></script>
+		<script src="./vendor/vendor/apex/admin/income.js"></script>
+		<script src="./vendor/vendor/apex/admin/customers.js"></script>
+
+		<!-- Main JS -->
+		<script src="./vendor/js/main.js"></script>
 
 	</head>
     <body>
@@ -87,39 +124,3 @@
 	</body> 
 
 
-	<!--**************************
-			**************************
-				**************************
-							Required JavaScript Files
-				**************************
-			**************************
-		**************************-->
-		<!-- Required jQuery first, then Bootstrap Bundle JS -->
-		<script src="./vendor/js/jquery.min.js"></script>
-		<script src="./vendor/js/bootstrap.bundle.min.js"></script>
-		<script src="./vendor/js/moment.js"></script>
-
-
-		<!-- *************
-			************ Vendor Js Files *************
-		************* -->
-		<!-- Slimscroll JS -->
-		<script src="./vendor/vendor/slimscroll/slimscroll.min.js"></script>
-		<script src="./vendor/vendor/slimscroll/custom-scrollbar.js"></script>
-
-		<!-- Daterange -->
-		<script src="./vendor/vendor/daterange/daterange.js"></script>
-		<script src="./vendor/vendor/daterange/custom-daterange.js"></script>
-
-		<!-- Polyfill JS -->
-		<script src="./vendor/vendor/polyfill/polyfill.min.js"></script>
-
-		<!-- Apex Charts -->
-		<script src="./vendor/vendor/apex/apexcharts.min.js"></script>
-		<script src="./vendor/vendor/apex/admin/visitors.js"></script>
-		<script src="./vendor/vendor/apex/admin/deals.js"></script>
-		<script src="./vendor/vendor/apex/admin/income.js"></script>
-		<script src="./vendor/vendor/apex/admin/customers.js"></script>
-
-		<!-- Main JS -->
-		<script src="./vendor/js/main.js"></script>

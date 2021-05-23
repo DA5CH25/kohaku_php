@@ -30,7 +30,7 @@ $base_url='vendor/calendario/';
 <div class="card">
 <div style="padding-left: 100px;padding-right: 100px;padding-top: 30px">
     
-     <h1>Mis Clases</h1>
+     <h2>Mis Clases</h2>
         <div class="row">
             <!--<div class="page-header"><h4></h4></div>-->
             <div class="pull-left form-inline"><br>
@@ -48,7 +48,7 @@ $base_url='vendor/calendario/';
             </div>
            
         </div>
-        <br><br><br>
+        <br><br><br><br>
         <div class="row">
             <div id="calendar"></div> <!-- Aqui se mostrara nuestro calendario -->
             
@@ -73,19 +73,24 @@ $base_url='vendor/calendario/';
         <div class="card">
 <div style="padding-left: 100px;padding-right: 100px;padding-top: 30px">
         <br/> <h2>Incribirse a clases</h2>
-    
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
+        
+        
+        <div class="table-container">
+				<div class="table-responsive">
+					<table class="table custom-table m-0">
+						<thead>
+							<tr>
+						    	 <th scope="col">#</th>
       <th scope="col">Clase</th>
       <th scope="col">Instructor</th>
       <th scope="col">Fecha Inicio</th>
        <th scope="col">Fecha Fin</th>
        <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
+							</tr>
+						</thead>
+						<tbody>
+    
+  
    <?php
    $idUsuarioSesion=$_SESSION['userid_sk'];
        $sql="select c.titulo,c.inicio_normal,c.final_normal, u.nombre, c.id from clase c 
@@ -104,13 +109,15 @@ $base_url='vendor/calendario/';
            echo '<td>'.$row['nombre'].'</td>';
            echo '<td>'.$row['inicio_normal'].'</td>';
            echo '<td>'.$row['final_normal'].'</td>';
-           echo '<td><input type="button" value="selecionar" onclick="guardarClase('.$idUsuarioSesion.', '.$row['id'].')" /></td>';
+           echo '<td><input type="button" value="selecionar" class="btn btn-primary" onclick="guardarClase('.$idUsuarioSesion.', '.$row['id'].')" /></td>';
            echo '</tr>';
         }
         }
        ?>
-  </tbody>
-</table>
+ </tbody>
+					</table>
+				</div>
+			</div>
       </div>
        
    </div>
