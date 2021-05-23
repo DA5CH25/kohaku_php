@@ -11,7 +11,7 @@ include 'config/config.php';
 
 $base_url = 'vendor/';
 
-$mostrar_editar_bitacora='style="display:none"';
+
 
 ?>
 	<!--**************************
@@ -83,7 +83,7 @@ $mostrar_editar_bitacora='style="display:none"';
 								<th>Alumno</th>
 								<th>Bitacora</th>
 								<th>Fecha</th>
-								<th>Botom</th>
+								<th>Boton</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -139,7 +139,7 @@ $mostrar_editar_bitacora='style="display:none"';
 
 
 
-<div class="card" id="bitacoraEditar" style="display:none"  >
+<div class="card" id="bitacoraEditar" style="display:none"  >//display none es para ocultar
 	<div class="card-header">
 		<div class="card-title">Alumno: <label id="lblNombreAlumno"  ></label> </div>
 		<div class="card-title">Clase: <label id="lblClase"  ></label></div>
@@ -188,7 +188,8 @@ $mostrar_editar_bitacora='style="display:none"';
             	  alert(mensajeExito);
               });
         }
-        
+
+       //la llama el boton de crear o de actualizar que estan en la tabla
         function mostarBitacoraEditar(idAlumno,idClase,idProfesor,esCrear,nombreAlumno,clase,bitacora){
         	document.getElementById('hiddenIdAlumno').value =idAlumno.toString();
         	document.getElementById('hiddenIdClase').value =idClase.toString();
@@ -207,7 +208,7 @@ $mostrar_editar_bitacora='style="display:none"';
         	}
         	
         	var bitacoraEditar = document.getElementById("bitacoraEditar");
-            	bitacoraEditar.style.display = "block";
+            	bitacoraEditar.style.display = "block";//mostrar el div de editar o crear bitacora
         }
 
         </script>

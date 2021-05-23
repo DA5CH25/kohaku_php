@@ -163,21 +163,17 @@ $mostrar_editar_bitacora='style="display:none"';
 
      function cerrarBitacora(){
     	 var bitacoraEditar = document.getElementById("bitacoraEditar");
-     	bitacoraEditar.style.display = "none";
+     	bitacoraEditar.style.display = "none";//ocultar bitacora
         }
         
         function mostarBitacoraEditar(idAlumno,idClase,idProfesor,esCrear,nombreAlumno,clase,bitacora){
-        	document.getElementById('hiddenIdAlumno').value =idAlumno.toString();
-        	document.getElementById('hiddenIdClase').value =idClase.toString();
-        	document.getElementById('hiddenIdProfesor').value =idProfesor.toString();
         	document.getElementById('lblNombreAlumno').innerHTML=nombreAlumno;
         	document.getElementById('lblClase').innerHTML=clase;
         	if(bitacora != undefined) {
         		document.getElementById('txareaBitacora').innerHTML=bitacora;
         	}
-        	document.getElementById("txareaBitacora").readOnly;
         	var bitacoraEditar = document.getElementById("bitacoraEditar");
-            	bitacoraEditar.style.display = "block";
+            	bitacoraEditar.style.display = "block";//mostrar bitacora
         }
 
         </script>
