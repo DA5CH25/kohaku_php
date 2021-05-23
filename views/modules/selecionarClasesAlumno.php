@@ -48,7 +48,7 @@ $base_url='vendor/calendario/';
             </div>
            
         </div>
-        <br><br><br>
+        <br><br><br><br>
         <div class="row">
             <div id="calendar"></div> <!-- Aqui se mostrara nuestro calendario -->
             
