@@ -1,8 +1,14 @@
 <?php
 require_once './models/Conexion.clase.php';
 require_once './models/Rol.clase.php'; 
+if($petitionAjax){
+	require_once "../config/mainModel.php";
+}else{
+	// si la eticion ajax es fale aceder a la configuración DB
+	require_once "./config/mainModel.php";
+}
 
-class RolesDAO {
+class RolesDAO extends mainModel{
 	public static function listarDatos () {
 		$con = new Conexion();
 		$cont = $con->ejecutarConsulta('SELECT * FROM usuario');
@@ -23,11 +29,16 @@ class RolesDAO {
 		$con->cerrarConexion();
 	}
 
-	public static function buscarPorId ($id) {
-		$con = new Conexion();
-		$cont = $con->ejecutarConsulta("SELECT * FROM usuario WHERE id_usuario = $id_usuario");
+	public function buscarPorId ($id) {
+		/*$con = new Conexion();
+		$cont = $con->ejecutarConsulta("SELECT * FROM usuario WHERE id_usuario = $id");
 		$con->cerrarConexion();
-		return $cont[0];
+		return $cont->fetch();*/
+		$sql=mainModel::connect()->prepare("SELECT * FROM usuario WHERE id_usuario=:iduser");
+		$sql->bindParam(':iduser',$id);
+		$sql->execute();
+		return $sql->fetch();
+	
 	}
 
 	public static function editarDato ($rol) {

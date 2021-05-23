@@ -1,5 +1,18 @@
 <?php 
-require_once './models/Roles.dao.php' ?>
+require_once './models/Roles.dao.php' ;
+	if(isset($_POST['useredit']) && $_POST['useredit']!=""){ 
+		$_SESSION['aux_sk']= $_POST['useredit'];
+	} 
+	if(isset($_POST['useredit']) && $_POST['useredit']!=""):?>
+	<meta http-equiv="refresh" content="0;url=http://localhost/kohaku_php/?page=useredit">
+	<?php endif;
+	if(isset($_POST['userdocument']) && $_POST['userdocument']!=""){ 
+		$_SESSION['aux_sk']= $_POST['userdocument'];
+	} 
+	if(isset($_POST['userdocument']) && $_POST['userdocument']!=""):?>
+	<meta http-equiv="refresh" content="0;url=http://localhost/kohaku_php/?page=userdocument">
+	<?php endif;
+	?>
 
 <!DOCTYPE html>
 <html>
@@ -45,9 +58,22 @@ require_once './models/Roles.dao.php' ?>
 				<td><?= $fila[5] ?></td>
 				<td><?= $fila[6] ?></td>
 				<td><?= $fila[7] ?></td>
-				<td><a class="badge badge-success" href="/Kohaku_php/?page=useredit.php?id_usuario=<?=$fila[0]?>">Editar</a></td>
-				<td><a class="badge badge-success" href="/Kohaku_php/?page=useredit.php?id_usuario=<?=$fila[0]?>">Agregar Documentos</a></td>
-				<td><a class="badge badge-danger" href="./controllers/Roles.controlador.php?a=elim&id_usuario=<?=$fila[0]?>" onclick="return confirm('¿Desea eliminar?')">Eliminar</a></td>
+				<td><!--<a class="badge badge-success" href="/Kohaku_php/?page=useredit.php?id_usuario=<?=$fila[0]?>">Editar</a>-->
+			    <form method="POST">
+					<input type = "hidden" name="useredit" value="<?php echo $fila[0] ?>" />
+					<button class="badge badge-success" type= "submit" value ="Editar">Editar</button>
+				</form>
+				</td>
+				<td>
+			    <form method="POST">
+					<input type = "hidden" name="userdocument" value="<?php echo $fila[0] ?>" />
+					<button class="badge badge-success" type= "submit" value ="Agregar Documento">Agregar Documento</button>
+				</form></td>
+				<td>
+			    <form method="POST">
+					<input type = "hidden" name="userdelete" value="<?php echo $fila[0] ?>" />
+					<button class="badge badge-success" type= "submit" value ="Eliminar">Eliminar</button>
+				</form></td>
 			</tr>
 		<?php } ?>
 		

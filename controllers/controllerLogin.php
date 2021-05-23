@@ -37,6 +37,7 @@
                 $_SESSION['usertype_sk']=$userdata['tipo_usuario_id_tipo_usuario'];
                 $_SESSION['userid_sk']=$userdata['id_usuario'];
                 $_SESSION['rango_sk']=$userdata['rango_usuario_id_rango_usuario'];
+                $_SESSION['aux_sk']=0;
 
                 //Se agrega este código para acceder a la vista del calendario
                 $url=SERVER_RELATIVE_URL."dashboard";

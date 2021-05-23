@@ -1,5 +1,9 @@
 <?php 
-require_once './models/Roles.dao.php' ?>
+require_once './models/Roles.dao.php';
+if($_SESSION['aux_sk'] != 0){
+	$_SESSION['aux_sk']=0;
+}
+?>
 
 <!DOCTYPE html>
 <html>

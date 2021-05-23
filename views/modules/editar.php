@@ -1,4 +1,11 @@
 <?php
+$user;
+if($_SESSION['aux_sk'] != 0){
+	require_once "./controllers/controllerEdit.php";
+	$edit = new controllerEdit();
+	$user= $edit->user_data($_SESSION['aux_sk']);
+	$_SESSION['aux_sk']=0;
+}
 if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['direction']) && isset($_POST['movil']) && isset($_POST['phone']) && isset($_POST['numberdoc']) && $_POST['first_name']!="" && $_POST['last_name']!="" && $_POST['email']!="" && $_POST['pass']!="" && $_POST['direction']!="" && $_POST['movil']!="" && $_POST['phone']!="" && $_POST['numberdoc']!="")
 	{
 		require_once "./controllers/controllerRegister.php";
@@ -18,48 +25,41 @@ if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['em
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="card h-100">
 								<div class="card-header">
-									<div class="card-title">EDITAR USUARIO</div>
+									<div class="card-title">EDITAR USUARIO </div>
 								</div>
-								<div class="col-xl-2 col-lg col-md-1 col-sm-1 col-1">
-											<div class="form-group">
-												<select class="form-control" ()>
-													<option>Seleccione Usario</option>
-												</select>
-											</div>
-										</div>
 								<div class="card-body">
 									<div class="row gutters">
 										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 											<form action="" method="POST">
 											<div class="form-group">
 												<label >Nombre</label>
-												<input name="first_name" class="form-control" id="first_name" placeholder="Nombre">
+												<input name="first_name" class="form-control" id="first_name" value="<?php if ( isset($user)){echo $user['nombre'];} ?>" placeholder="Nombre"  >
 											</div>
 											<div class="form-group">
 												<label >No. Documento</label>
-												<input name="numberdoc" class="form-control" id="numberdoc" placeholder="Documento">
+												<input name="numberdoc" class="form-control" id="numberdoc" value="<?php if ( isset($user)){echo $user['numero_identificacion'];} ?>" placeholder="Documento">
 											</div>
 											<div class="form-group">
 												<label >Telefono Fijo</label>
-												<input name="phone" class="form-control" id="phone" placeholder="Telefono Fijo">
+												<input name="phone" class="form-control" id="phone" value="<?php if ( isset($user)){echo $user['telefono_fijo'];} ?>" placeholder="Telefono Fijo">
 											</div>	
 											<div class="form-group">
 												<label >Direccion</label>
-												<input name="direction" class="form-control" id="direction" placeholder="Direccion">
+												<input name="direction" class="form-control" id="direction" value="<?php if ( isset($user)){echo $user['direccion'];} ?>" placeholder="Direccion">
 											</div>																					
 										</div>
 										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 											<div class="form-group">
 												<label >Apellido</label>
-												<input name="last_name" class="form-control" id="last_name" placeholder="Apellido">
+												<input name="last_name" class="form-control" id="last_name" value="<?php if ( isset($user)){echo $user['apellido'];} ?>" placeholder="Apellido">
 											</div>
 											<div class="form-group">
 												<label >Correo Electronico</label>
-												<input name="email" class="form-control" id="email" placeholder="Correo">
+												<input name="email" class="form-control" id="email" value="<?php if ( isset($user)){echo $user['correo_electronico'];} ?>" placeholder="Correo">
 											</div>
 											<div class="form-group">
 												<label>Telefono Celular</label>
-												<input name="movil" class="form-control" id="movil" placeholder="Telefono Celular">
+												<input name="movil" class="form-control" id="movil" value="<?php if ( isset($user)){echo $user['telefono_movil'];} ?>" placeholder="Telefono Celular">
 											</div>
 											<div class="form-group">
 												<label >Clave</label>
