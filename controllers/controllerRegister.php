@@ -163,6 +163,26 @@
             
         }
     
+        public function add_bitacora_controller(){
+            
+			$observacion=mainModel::clean_string($_POST['anotacion']);
+			$userid=mainModel::clean_string($_POST['visualNotes']);
+			$claseid=mainModel::clean_string($_POST['visualList']);
+			$fecha=mainModel::clean_string($_POST['fechaActual']);
+			$teacherid=$_SESSION['userid_sk'];
+		$dataBitacora=[
+			"observacion"=>$observacion,
+			"userid"=>$userid,
+			"claseid"=>$claseid,
+			"fecha"=>$fecha,
+			"teacherid"=>$teacherid
+		];
+        $saveAccount=modelRegister::add_bitacora_full($dataBitacora);
+        
+        if($saveAccount->rowCount()>=1){
+        }
+        }
+
         public function add_user_incomplete_data() {
             $alert=[
                 "alert"=>"simple",

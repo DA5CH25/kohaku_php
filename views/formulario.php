@@ -28,6 +28,17 @@
 		************ -->
 		<!-- DateRange css -->
 		<link rel="stylesheet" href="./vendor/vendor/daterange/daterange.css" />
+
+
+		<!-- Datepicker css -->
+		<link rel="stylesheet" href="./vendor/vendor/datepicker/css/classic.css" />
+		<link rel="stylesheet" href="./vendor/vendor/datepicker/css/classic.date.css" />
+
+        
+		<!-- Data Tables -->
+		<link rel="stylesheet" href="./vendor/vendor/datatables/dataTables.bs4.css" />
+		<link rel="stylesheet" href="./vendor/vendor/datatables/dataTables.bs4-custom.css" />
+		<link href="./vendor/vendor/datatables/buttons.bs.css" rel="stylesheet" />
 		
 	<!--**************************
 			**************************
@@ -62,6 +73,38 @@
 		<script src="./vendor/vendor/apex/admin/deals.js"></script>
 		<script src="./vendor/vendor/apex/admin/income.js"></script>
 		<script src="./vendor/vendor/apex/admin/customers.js"></script>
+
+		
+		<!-- Datepickers -->
+		<script src="./vendor/vendor/datepicker/js/picker.js"></script>
+		<script src="./vendor/vendor/datepicker/js/picker.date.js"></script>
+		<script src="./vendor/vendor/datepicker/js/custom-picker.js"></script>
+        
+		
+		<!-- Summernote CSS -->
+		<link rel="stylesheet" href="./vendor/vendor/summernote/summernote-bs4.css" />
+
+		<!-- Data Tables -->
+		<script src="./vendor/vendor/datatables/dataTables.min.js"></script>
+		<script src="./vendor/vendor/datatables/dataTables.bootstrap.min.js"></script>
+		
+		<!-- Custom Data tables -->
+		<script src="./vendor/vendor/datatables/custom/custom-datatables.js"></script>
+		<script src="./vendor/vendor/datatables/custom/fixedHeader.js"></script>
+
+		<!-- Download / CSV / Copy / Print -->
+		<script src="./vendor/vendor/datatables/buttons.min.js"></script>
+		<script src="./vendor/vendor/datatables/jszip.min.js"></script>
+		<script src="./vendor/vendor/datatables/pdfmake.min.js"></script>
+		<script src="./vendor/vendor/datatables/vfs_fonts.js"></script>
+		<script src="./vendor/vendor/datatables/html5.min.js"></script>
+		<script src="./vendor/vendor/datatables/buttons.print.min.js"></script>
+
+		
+		<!-- Input Masks JS -->
+		<script src="./vendor/vendor/input-masks/cleave.min.js"></script>
+		<script src="./vendor/vendor/input-masks/cleave-phone.js"></script>
+		<script src="./vendor/vendor/input-masks/cleave-custom.js"></script>
 
 		<!-- Main JS -->
 		<script src="./vendor/js/main.js"></script>

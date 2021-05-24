@@ -1,214 +1,291 @@
 <?php
-
-// Definimos nuestra zona horaria
-date_default_timezone_set("America/Santiago");
-
-// incluimos el archivo de funciones
-include 'util/funciones.php';
-
-// incluimos el archivo de configuracion
-include 'config/config.php';
-
-$base_url = 'vendor/';
-
-
+	require_once './models/Roles.dao.php' ;
+	date_default_timezone_set ( "America/Bogota" );
+	$fechaActual = date("Y-m-d");
+	if(isset($_POST['anotacion']) && $_POST['anotacion']!=""){
+		require_once "./controllers/controllerRegister.php";
+		$register = new controllerRegister();
+		$url = $register->add_bitacora_controller();
+	}
 
 ?>
-	<!--**************************
-			**************************
-				**************************
-							Required JavaScript Files
-				**************************
-			**************************
-		**************************-->
-		<!-- Required jQuery first, then Bootstrap Bundle JS -->
-		<script src="<?php $base_url?>js/jquery.min.js"></script>
-		<script src="<?php $base_url?>js/bootstrap.bundle.min.js"></script>
-		<script src="<?php $base_url?>js/moment.js"></script>
+				
+                <!-- Main container start -->
+				<div class="main-container">
 
 
-		<!-- *************
-			************ Vendor Js Files *************
-		************* -->
-		<!-- Slimscroll JS -->
-		<script src="<?php $base_url?>vendor/slimscroll/slimscroll.min.js"></script>
-		<script src="<?php $base_url?>vendor/slimscroll/custom-scrollbar.js"></script>
+					<!-- Row ends -->
+                    
+					<!-- Row starts -->
+					<div class="row gutters">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
-		<!-- Daterange -->
-		<script src="<?php $base_url?>vendor/daterange/daterange.js"></script>
-		<script src="<?php $base_url?>vendor/daterange/custom-daterange.js"></script>
+							<div class="card">
+								<div class="card-body">
 
-		<!-- Summernote JS -->
-		<script src="<?php $base_url?>vendor/summernote/summernote-bs4.js"></script>
+									<div class="card-title"><h4>Opciones de busqueda </h4></div>
+										<div class="row gutters">
+											<div class="col-xl-5 col-lglg-5 col-md-5 col-sm-12 col-12">
+												<h6>Busqueda de alumnos</h6>
+												<div class="form-group">
+													<div class="input-group">							
+														<form class="input-group" method="POST">
+															<input type="text" name="nombre" class="form-control" placeholder="Nombre" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+															<div class="input-group-append" id="button-addon4">			
+																	<input type = "hidden" name="visualList" value="1"/>
+																	<button class="btn btn-primary" type="submit" data-toggle="tooltip" data-placement="top" title="Buscar alumno"><span class="icon-search"></span></button>
+																		
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+					
+											<div class="col-xl-1 col-lglg-1 col-md-1 col-sm-12 col-12">
+											<h6><br></h6>
+												<form method="POST">
+																<input type = "hidden" name="visualList" value="2"/>
+																<button class="btn btn-dark" type="submit" data-toggle="tooltip" data-placement="top" title="Listar alumnos"><span class="icon-list2"></span></button>
+												</form>	
+
+											</div>
+
+											<div class="col-xl-6 col-lglg-6 col-md-6 col-sm-12 col-12">
+												<div class="form-group">
+													<h6>Busqueda de clase</h6>
+													<div class="custom-date-input">
+														
+													<div class="input-group">
+														<form class="input-group" method="POST">
+															<input type="date" class="form-control" min="2021-01-01" max=<?=$fechaActual?> name="fecha"  value=<?=$fechaActual?> />
+														
+															<div class="input-group-append" id="button-addon4">
+																	<input type = "hidden" name="visualList" value="3"/>
+																	<button class="btn btn-primary" type="submit" data-toggle="tooltip" data-placement="top" title="Buscar por fecha"><span class="icon-search"></span></button>
+																
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+
+										</div>
+                                    </div>
+
+                                </div>
+							</div>
+
+							<?php
+							if (isset($_POST['visualList']) && $_POST['visualList']!=""):
+							?>
+
+								<?php
+								if ($_POST['visualList']=="1" && isset($_POST['nombre'])):
+								?>
+
+									<div class="table-container">
+										<div class="t-header"></div>
+										<div class="table-responsive">
+											<table id="hideSearchExample" class="table custom-table">
+												<thead>
+												<tr>
+													<th>Nombre</th>
+													<th>Apellido</th>
+													<th>Tel.Fijo</th>
+													<th>Celular</th>
+													<th>Correo</th>
+													<th>Bitacora</th>
+												</tr>
+												</thead>
+												<tbody>
+													<?php foreach (RolesDAO::list_for_name_model($_POST['nombre']) as $fila) { ?>
+														<tr>
+															<td><?= $fila[1] ?></td>
+															<td><?= $fila[2] ?></td>
+															<td><?= $fila[4] ?></td>
+															<td><?= $fila[5] ?></td>
+															<td><?= $fila[7] ?></td>
+															<td>
+																<div class="input-group">
+																	<form method="POST">
+																		<input type = "hidden" name="visualNotes" value="<?php echo $fila[0] ?>" />
+																		<input type = "hidden" name="nameNotes" value="<?php echo $fila[1] ?>" />
+																		<input type = "hidden" name="nombre" value="<?php echo $_POST['nombre'] ?>" />
+																		<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
+																		<button class="btn btn-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agregar una observacion"><span class="icon-book-open"></span></button>
+																	</form>
+																</div>
+															</td>
+															
+														</tr>
+													<?php } ?>
+												</tbody>
+										</table>
+										</div>
+									</div>
+
+								<?php endif;
+								?>
+
+								<?php
+								if ($_POST['visualList']=="2"):
+								?>
+
+									<div class="table-container">
+										<div class="t-header"></div>
+										<div class="table-responsive">
+											<table id="hideSearchExample" class="table custom-table">
+												<thead>
+												<tr>
+													<th>Nombre</th>
+													<th>Apellido</th>
+													<th>Tel.Fijo</th>
+													<th>Celular</th>
+													<th>Correo</th>
+													<th>Bitacora</th>
+												</tr>
+												</thead>
+												<tbody>
+													<?php foreach (RolesDAO::listarDatos() as $fila) { ?>
+														<tr>
+															<td><?= $fila[1] ?></td>
+															<td><?= $fila[2] ?></td>
+															<td><?= $fila[4] ?></td>
+															<td><?= $fila[5] ?></td>
+															<td><?= $fila[7] ?></td>
+															<td>
+																<div class="input-group">
+																	<form method="POST">
+																		<input type = "hidden" name="visualNotes" value="<?php echo $fila[0] ?>" />
+																		<input type = "hidden" name="nameNotes" value="<?php echo $fila[1] ?>" />
+																		<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
+																		<button class="btn btn-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agregar una observacion"><span class="icon-book-open"></span></button>
+																	</form>
+																</div>
+															</td>
+															
+														</tr>
+													<?php } ?>
+												</tbody>
+										</table>
+										</div>
+									</div>
+
+								<?php endif;
+								?>
 
 
-		<!-- Main Js Required -->
-		<script src="<?php $base_url?>js/main.js"></script>
+								<?php
+								if ($_POST['visualList']=="3" && isset($_POST['fecha'])):
+								?>
 
-		<script>
-			$(document).ready(function() {
-				$('.summernote').summernote({
-					height: 170,
-					tabsize: 2
-				});
-			});
-		</script>
+									<div class="table-container">
+										<div class="t-header"></div>
+										<div class="table-responsive">
+											<table id="hideSearchExample" class="table custom-table">
+												<thead>
+												<tr>
+													<th>Nombre</th>
+													<th>Descripcion</th>
+													<th>Fecha inicio</th>
+													<th>Fecha fin</th>
+													<th>opciones</th>
+												</tr>
+												</thead>
+												<tbody>
+													<?php foreach (RolesDAO::list_of_class_model() as $fila) {$validacion =substr($fila[7],6,4)."-".substr($fila[7],3,2)."-".substr($fila[7],0,2);
+														if($validacion==$_POST['fecha'] ):?>
+														<tr>
+															<td><?= $fila[1] ?></td>
+															<td><?= $fila[2] ?></td>
+															<td><?= $fila[7] ?></td>
+															<td><?= $fila[8] ?></td>
+															<td>
+																<div class="input-group">
+																	<form method="POST">
+																		<input type = "hidden" name="visualNotes" value="<?php echo $fila[0] ?>" />
+																		<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
+																		<button class="btn btn-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agregar una observacion"><span class="icon-book-open"></span></button>
+																	</form>
+																</div>
+															</td>
+															
+														</tr>
+													<?php endif; } ?>
+												</tbody>
+										</table>
+										</div>
+									</div>
 
+								<?php endif;
+								?>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://codeseven.github.com/toastr/toastr.js"></script>
-<link href="http://codeseven.github.com/toastr/toastr.css"
-	rel="stylesheet" />
-<link href="http://codeseven.github.com/toastr/toastr-responsive.css"
-	rel="stylesheet" />
-<!-- Card Content -->
-<div class="card shadow mb-5 ">
-	<!-- Card Header - Dropdown -->
-	<div
-		class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
-		<div class="form-group row mb-0">
-			<h1 class="h4 mb-0 text-white-800 text-center text-dark">Bitacora</h1>
-		</div>
-	</div>
+							<?php endif;
+							?>
+                            <?php
+							if (isset($_POST['visualNotes']) && $_POST['visualNotes']!="" && $_POST['visualNotes']!="0"):
+							?>
 
-	
-			<div class="table-container">
-				<div class="table-responsive">
-					<table class="table custom-table m-0">
-						<thead>
-							<tr>
-							    <th>Clase</th>
-								<th>Instructor</th>
-								<th>Alumno</th>
-								<th>Bitacora</th>
-								<th>Fecha</th>
-								<th>Boton</th>
-							</tr>
-						</thead>
-						<tbody>
-						   <?php
-            $idUsuarioSesion = $_SESSION['userid_sk'];
-            $sql = "SELECT alumno.nombre as nombre_alumno, alumno.apellido as apellido_alumno, cls.titulo, inst.nombre as nombre_instructor, 
-            inst.apellido as apellido_instructor, bta.observacion, bta.fecha, alumno.id_usuario as id_alumno, cls.id as id_clase
-            FROM usuario_has_clases uhc
-            INNER JOIN usuario alumno ON alumno.id_usuario=uhc.usuario_id_usuario
-            INNER JOIN clase cls ON cls.id=uhc.clases_id_clases
-            INNER JOIN usuario inst ON inst.id_usuario=cls.id_instructor
-            LEFT JOIN bitacora bta ON bta.usuario_id_usuario=alumno.id_usuario and bta.clases_id_clases=cls.id
-            where cls.id_instructor=" . $idUsuarioSesion . " order by  cls.titulo;";
-           if ($conexion->query($sql)->num_rows) {
-          $resultadoConsulta = $conexion->query($sql);
-          $i = 0;
-          while ($row = $resultadoConsulta->fetch_array()) {
-        $i ++;
-        echo '<tr>';
-        echo '<td>' . $row['titulo'] . '</td>';
-        echo '<td>' . $row['nombre_instructor'] . ' ' . $row['apellido_instructor'] . '</th>';
-        $nombreComplatoAlumno=$row['nombre_alumno'] . ' ' . $row['apellido_alumno'];
-        echo '<td>' . $nombreComplatoAlumno . '</th>';
-        if(strlen($row['observacion'] )>50 ){
-            echo '<td>' .substr($row['observacion'] , 0, 50) .'...'. '</td>';
-        }else{
-            echo '<td>' .$row['observacion']. '</td>';
-        }
-        echo '<td>' . $row['fecha'] . '</td>';
-        $esCrearBitacora=0;
-        $tipoBoton='value="Actualizar Bitacora" class="btn btn-warning"';
-        if ($row['observacion'] == null) {
-            $esCrearBitacora=1;
-            $tipoBoton='value="Crear Bitacora" class="btn btn-danger"';
-        }
-        echo '<td><input type="button" '.$tipoBoton.' onclick="mostarBitacoraEditar(' . $row['id_alumno'] . ', ' . $row['id_clase'] . ',' .
-                    $idUsuarioSesion .','.$esCrearBitacora.',\'' . $nombreComplatoAlumno.'\',\''. $row['titulo'].'\',\''.$row['observacion'] . ' \')" /></td>';
-        echo '</tr>';
-    }
-}
-?>
-							
-						</tbody>
-					</table>
-				</div>
-			</div>
+								<div class="card">
+									<div class="card-body">
+										<div class="card-title"><h4><?php if (isset($_POST['nameNotes']) && $_POST['nameNotes']!=""){ echo $_POST['nameNotes'];} else{ echo "Nombre del alumno"; }?></h4></div>
+										<div class="row gutters">
 
+											<div class="input-group">
+												<div class="col-xl-10 col-lglg-10 col-md-10 col-sm-12 col-12">
+												<form class="input-group" method="POST">
+
+													<div class="col-xl-10 col-lglg-10 col-md-10 col-sm-12 col-12">
+														<h6>Observaciones</h6>
+														<div class="form-group">
+															<textarea class="form-control" id="message" placeholder="Anotacion" maxlength="140" rows="2" name="anotacion"></textarea>
+															<div class="form-text text-muted">
+																<p id="characterLeft" class="help-block">140 characters left</p>
+															</div>
+														</div>
+													</div>
+													
+														<div class="col-xl-2 col-lglg-2 col-md-2" >
+															
+														<h2><br></h2>
+
+															<input type = "hidden" name="nombre" value="<?php echo $_POST['nombre'] ?>" />
+															<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
+																<input type = "hidden" name="visualNotes" id="visualNotes" value="<?php echo $_POST['visualNotes'] ?>" />
+																<input type = "hidden" name="fechaActual" id="fechaActual" value="<?php echo $fechaActual ?>" />
+															<button class="btn btn-primary" type="submit"><span class="icon-save2"></span>Guardar</button>
+														
+														</div>
+
+													</div>
+
+												</form>
+												<form method="POST">
+
+														<div class="col-xl-2 col-lglg-2 col-md-2" >
+															
+															<h2><br></h2>
 		
-<label id="lblMensajeexito" style="color: green"  ></label>
-	
-</div>
+																<input type = "hidden" name="nombre" value="<?php echo $_POST['nombre'] ?>" />
+																<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
+																<input type = "hidden" name="visualNotes" id="visualNotes" value="<?php echo $_POST['visualNotes'] ?>" />
+																<input type = "hidden" name="fechaActual" id="fechaActual" value="<?php echo $fechaActual ?>" />
+																<button class="btn btn-dark" type="submit"><span class="icon-circle-with-cross"></span>Cancelar</button>
+															
+														</div>
+												</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 
+							<?php endif;
+							?>
 
+						</div>
+					</div>
+					<!-- Row ends -->
 
-
-<div class="card" id="bitacoraEditar" style="display:none"  >//display none es para ocultar
-	<div class="card-header">
-		<div class="card-title">Alumno: <label id="lblNombreAlumno"  ></label> </div>
-		<div class="card-title">Clase: <label id="lblClase"  ></label></div>
-		<input type="hidden"  id="hiddenIdAlumno" ></input>
-		<input type="hidden"  id="hiddenIdClase" ></input>
-		<input type="hidden"  id="hiddenIdProfesor" ></input>
-		<input type="hidden"  id="hiddenEsCrear" ></input>
-	</div>
-	<div class="card-body">
-
-		<div class="form-group">
-			<label for="exampleFormControlTextarea1">Bitacora</label>
-			<textarea class="form-control" id="txareaBitacora"
-				rows="3"></textarea>
-		</div>
-		<div>
-			<input type="button" value="Actualizar Bitacora"
-				class="btn btn-danger" id="btnCrearActualizrBitacora" onclick="crearBitacora()" />
-		</div>
-	</div>
-</div>
-
-
-<script type="text/javascript">
-
-     function crearBitacora(){
-    	 var  idAlumno= document.getElementById("hiddenIdAlumno").value;
-    	 var  idClase= document.getElementById("hiddenIdClase").value;
-    	 var  idProfesor= document.getElementById("hiddenIdProfesor").value;
-    	 var  esCrear= document.getElementById("hiddenEsCrear").value;
-    	 var  textoBitacora=document.getElementById("txareaBitacora").value;
-         
-            var esNuevaBitacora=false;
-            var mensajeExito="Actualizado Exitosamente";
-            if(esCrear == "true") {
-            	esNuevaBitacora=true;
-            	var mensajeExito="Creado Exitosamente";
-            }
-        	
-            $.ajax({
-                type: "POST",
-                url: "models/guardarBitacora.php",
-                data: { id_alumno: idAlumno,id_clase : idClase,texto_bitacora : textoBitacora, id_profesor : idProfesor, es_nueva_bitacora : esNuevaBitacora}
-              }).done(function( msg ) {
-            	  window.location.replace("?page=bitacora");
-            	  alert(mensajeExito);
-              });
-        }
-
-       //la llama el boton de crear o de actualizar que estan en la tabla
-        function mostarBitacoraEditar(idAlumno,idClase,idProfesor,esCrear,nombreAlumno,clase,bitacora){
-        	document.getElementById('hiddenIdAlumno').value =idAlumno.toString();
-        	document.getElementById('hiddenIdClase').value =idClase.toString();
-        	document.getElementById('hiddenIdProfesor').value =idProfesor.toString();
-        	if(esCrear === 1) {
-        		document.getElementById('hiddenEsCrear').value ="true";
-        		 document.getElementById('btnCrearActualizrBitacora').value ="Crear Bitacora";
-        	}else{
-        		document.getElementById('hiddenEsCrear').value ="false";
-        		 document.getElementById('btnCrearActualizrBitacora').value ="Actualizar Bitacora";
-        	}
-        	document.getElementById('lblNombreAlumno').innerHTML=nombreAlumno;
-        	document.getElementById('lblClase').innerHTML=clase;
-        	if(bitacora != undefined) {
-        		document.getElementById('txareaBitacora').innerHTML=bitacora;
-        	}
-        	
-        	var bitacoraEditar = document.getElementById("bitacoraEditar");
-            	bitacoraEditar.style.display = "block";//mostrar el div de editar o crear bitacora
-        }
-
-        </script>
+				</div>
+				<!-- Main container end -->

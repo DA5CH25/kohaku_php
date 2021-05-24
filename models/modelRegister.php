@@ -62,4 +62,15 @@
             $sql->execute();
             return $sql;
         }
+        public function add_bitacora_full($datos){
+            $sql=mainModel::connect()->prepare("INSERT INTO bitacora(observacion,usuario_id_usuario,clases_id_clases,fecha,id_profesor) 
+            VALUES(:first_name,:last_name,:id_number,:phone,:cellphone)");
+            $sql->bindParam(":first_name", $datos['observacion']);
+            $sql->bindParam(":last_name", $datos['userid']);
+            $sql->bindParam(":id_number", $datos['claseid']);
+            $sql->bindParam(":phone", $datos['fecha']);
+            $sql->bindParam(":cellphone", $datos['teacherid']);
+            $sql->execute();
+            return $sql;
+        }
     }

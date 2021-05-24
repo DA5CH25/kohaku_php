@@ -7,3 +7,5 @@ class controllerEdit extends RolesDAO{
         return $userdata;
      }
 }
+
+?>
