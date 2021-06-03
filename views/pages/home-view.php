@@ -26,15 +26,13 @@
         <div class="card h-100">
             <div class="card-body">
                 <div class="account-settings">
-                    <div class="user-profile">
-								<div class="sale-num">
+								<div class="invoice-status">
                                     <div class="info-icon">
                                         <i class="icon-calendar1"></i>
                                     </div>
                                     <h3>clases</h3> 
 									<p>estas son proximas clases</p>      
 							    </div>    
-                    </div>
                                     <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">17:00 pm 19/05/2021</a> 
                                     <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">19:00 pm 19/05/2021</a> 
                                     <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">15:00 pm 20/05/2021</a> 
@@ -46,15 +44,13 @@
         <div class="card h-100">
             <div class="card-body">
                 <div class="account-settings">
-                    <div class="user-profile">
-								<div class="sale-num">
+								<div class="invoice-status">
 								<div class="info-icon">
 									<i class="icon-shopping-cart1"></i>
 								</div>
                                     <h3>Promociones</h3> 
 									<p>promoxiones vigentes par ti</p>
 								</div>
-                    </div>
                                     <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">3 clases a $15000<br></a> 
                 </div>
             </div>
@@ -64,15 +60,13 @@
         <div class="card h-100">
             <div class="card-body">
                 <div class="account-settings">
-                    <div class="user-profile">
-								<div class="sale-num">
+								<div class="invoice-status">
 								<div class="info-icon">
 									<i class="icon-shopping-bag1"></i>
 								</div>
 									<h3>Bitacora</h3>
 									<p>ultimas obsevaciones</p> 
 								</div>
-                    </div>
                                     <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">instructor: wilson 15/05/2021<br></a> 
                                     <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">instructor: jason 12/05/2021<br></a> 
                                     <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">instructor: daniel 9/05/2021<br></a> 

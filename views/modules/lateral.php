@@ -19,10 +19,10 @@
 								if( $_SESSION['usertype_sk']==1):
 							?>
 							<li class="header-menu">Menu</li>
-							<li class="sidebar-dropdown active">
+							<li>
 								<a href="/Kohaku_php/?page=dashboard">
 									<i class="icon-file-text"></i>
-									<span class="menu-text">dashboard</span>
+									<span class="menu-text">Control</span>
 								</a>
 								<!--<div class="sidebar-submenu">
 									<ul>
@@ -32,10 +32,21 @@
 									</ul>
 								</div>-->
 							</li>
-							<li class="sidebar-dropdown active">
+							<?php endif;
+							?>
+							<li>
+								<a href="/Kohaku_php/?page=home">
+									<i class="icon-user1"></i>
+									<span class="menu-text">Perfil</span>
+								</a>
+							</li>
+							<?php
+								if( $_SESSION['usertype_sk']==1):
+							?>
+							<li class="sidebar-dropdown inactive">
 								<a href="#">
 									<i class="icon-devices_other"></i>
-									<span class="menu-text">Administrador</span>
+									<span class="menu-text">Usuarios</span>
 								</a>
 								<div class="sidebar-submenu">
 									<ul>
@@ -56,18 +67,13 @@
 							</li>
 							<?php endif;
 							?>
-							<li>
-								<a href="/Kohaku_php/?page=home">
-									<i class="icon-user1"></i>
-									<span class="menu-text">perfil</span>
-								</a>
-							</li>
-							<li>
+							
+							<!--<li>
 								<a href="/Kohaku_php/?page=home">
 									<i class="icon-devices_other"></i>
 									<span class="menu-text">Editar perfil</span>
 								</a>
-							</li>
+							</li>-->
 							<li>
 								<a href="/Kohaku_php/?page=class">
 									<i class="icon-calendar1"></i>
