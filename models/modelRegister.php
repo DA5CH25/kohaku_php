@@ -79,7 +79,7 @@ require_once './models/Rol.clase.php';
             $sql->execute();
             return $sql;
         }
-
+        
 
             
           //funcion para crea un usuario

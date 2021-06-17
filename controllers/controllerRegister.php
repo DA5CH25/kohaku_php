@@ -225,11 +225,11 @@
         public function add_bitacora_controller(){
             
 			$observacion=mainModel::clean_string($_POST['anotacion']);
-			$userid=mainModel::clean_string($_POST['visualNotes']);
-			$claseid=mainModel::clean_string($_POST['visualList']);
+			$userid=mainModel::clean_string($_POST['hiddenIdAlumno']);
+			$claseid=mainModel::clean_string($_POST['hiddenIdClase']);
 			$fecha=mainModel::clean_string($_POST['fechaActual']);
 			$teacherid=$_SESSION['userid_sk'];
-		$dataBitacora=[
+		    $dataBitacora=[
 			"observacion"=>$observacion,
 			"userid"=>$userid,
 			"claseid"=>$claseid,

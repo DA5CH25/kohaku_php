@@ -55,6 +55,55 @@ class RolesDAO extends mainModel{
 		$con->cerrarConexion();
 		return $cont;
 	}
+	public static function listarAlumnosBitacoraPorNombre($idUsuarioSesion,$nombre) {
+	    $con = new Conexion();
+	    $cont = $con->ejecutarConsulta("SELECT distinct alumno.nombre as nombre_alumno, alumno.apellido as apellido_alumno, alumno.correo_electronico, cls.titulo,cls.inicio_normal, inst.nombre as nombre_instructor,
+            inst.apellido as apellido_instructor,  alumno.id_usuario as id_alumno, cls.id as id_clase
+            FROM usuario_has_clases uhc
+            INNER JOIN usuario alumno ON alumno.id_usuario=uhc.usuario_id_usuario
+            INNER JOIN clase cls ON cls.id=uhc.clases_id_clases
+            INNER JOIN usuario inst ON inst.id_usuario=cls.id_instructor
+            LEFT JOIN bitacora bta ON bta.usuario_id_usuario=alumno.id_usuario and bta.clases_id_clases=cls.id
+            where cls.id_instructor=" . $idUsuarioSesion . " and alumno.nombre= '".$nombre."' order by  cls.titulo;");
+	    $con->cerrarConexion();
+	    return $cont;
+	}
+	
+	public static function listarAlumnosBitacora($idUsuarioSesion) {
+	    $con = new Conexion();
+	    $cont = $con->ejecutarConsulta("SELECT distinct alumno.nombre as nombre_alumno, alumno.apellido as apellido_alumno, alumno.correo_electronico, cls.titulo,cls.inicio_normal, inst.nombre as nombre_instructor,
+            inst.apellido as apellido_instructor,  alumno.id_usuario as id_alumno, cls.id as id_clase
+            FROM usuario_has_clases uhc
+            INNER JOIN usuario alumno ON alumno.id_usuario=uhc.usuario_id_usuario
+            INNER JOIN clase cls ON cls.id=uhc.clases_id_clases
+            INNER JOIN usuario inst ON inst.id_usuario=cls.id_instructor
+            LEFT JOIN bitacora bta ON bta.usuario_id_usuario=alumno.id_usuario and bta.clases_id_clases=cls.id
+            where cls.id_instructor=" . $idUsuarioSesion . " order by  cls.titulo;");
+	    $con->cerrarConexion();
+	    return $cont;
+	}
+	
+	public static function listarAlumnosBitacoraProFecha($idUsuarioSesion,$fecha) {
+	    $fechaFormateada = explode("-", $fecha)[2]."/".explode("-", $fecha)[1]."/".explode("-", $fecha)[0];
+	    $con = new Conexion();
+	    $cont = $con->ejecutarConsulta("SELECT distinct alumno.nombre as nombre_alumno, alumno.apellido as apellido_alumno, alumno.correo_electronico, cls.titulo,cls.inicio_normal, inst.nombre as nombre_instructor,
+            inst.apellido as apellido_instructor,  alumno.id_usuario as id_alumno, cls.id as id_clase
+            FROM usuario_has_clases uhc
+            INNER JOIN usuario alumno ON alumno.id_usuario=uhc.usuario_id_usuario
+            INNER JOIN clase cls ON cls.id=uhc.clases_id_clases
+            INNER JOIN usuario inst ON inst.id_usuario=cls.id_instructor
+            LEFT JOIN bitacora bta ON bta.usuario_id_usuario=alumno.id_usuario and bta.clases_id_clases=cls.id
+            where cls.id_instructor=" . $idUsuarioSesion . "  and cls.inicio_normal   LIKE '".$fechaFormateada."%' order by  cls.titulo;");
+	    $con->cerrarConexion();
+	    return $cont;
+	}
+	
+	public static function listarAlumnosPorFecha($fecha) {
+	    $con = new Conexion();
+	    $cont = $con->ejecutarConsulta("SELECT * FROM usuario WHERE nombre = '$fecha'");
+	    $con->cerrarConexion();
+	    return $cont;
+	}
 	public static function list_of_class_model() {
 		$con = new Conexion();
 		$cont = $con->ejecutarConsulta("SELECT * FROM clase");

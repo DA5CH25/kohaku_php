@@ -114,9 +114,10 @@ $mostrar_editar_bitacora='style="display:none"';
         }
         echo '<td>' . $row['fecha'] . '</td>';
         $esCrearBitacora=0;
-        $tipoBoton='value="Ver Bitacora Completa" class="btn btn-danger"';
-        echo '<td><input type="button" '.$tipoBoton.' onclick="mostarBitacoraEditar(' . $row['id_alumno'] . ', ' . $row['id_clase'] . ',' .
-                    $idUsuarioSesion .','.$esCrearBitacora.',\'' . $nombreComplatoInstructor.'\',\''. $row['titulo'].'\',\''.$row['observacion'] . ' \')" /></td>';
+        $tipoBoton='value="Ver Bitacora" class="btn btn-danger"';
+        echo '<td><button type="button" data-toggle="modal"  data-target="#bitacoraModal" '.$tipoBoton.' onclick="mostarBitacoraEditar(\''. $nombreComplatoInstructor.'\',\''. $row['titulo'].'\',\''.$row['observacion'].'\')" ><span class="icon-book-open"></span></button>
+
+</td>';
         echo '</tr>';
     }
 }
@@ -126,54 +127,68 @@ $mostrar_editar_bitacora='style="display:none"';
 					</table>
 				</div>
 			</div>
-
+         <!-- Modal -->
+									<div class="modal fade" id="bitacoraModal" tabindex="-1" role="dialog" aria-labelledby="customModalTwoLabel" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="customModalTwoLabel">Crear Bitacora</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													<form>
+												    	<input type="hidden"  id="hiddenIdAlumno" ></input>
+		                                                <input type="hidden"  id="hiddenIdClase" ></input>
+		                                                <input type="hidden"  id="hiddenIdProfesor" ></input>
+		                                                <div class="form-group">
+															<label  class="col-form-label">Alumno:</label>
+															<label class="col-form-label" id="lblNombreAlumno" ></label>
+														</div>
+														<div class="form-group">
+															<label class="col-form-label">Clase: </label>
+															<label class="col-form-label" id="lblClase" ></label>
+														</div>
+	                                                     
+														<div class="form-group">
+															<label for="recipient-name" class="col-form-label">Bitacora</label>
+															<textarea class="form-control" id="txareaBitacora"	rows="3" readonly="readonly" ></textarea>
+														</div>
+														
+													</form>
+												</div>
+												<div class="modal-footer custom">
+													
+													<div class="left-side">
+														
+													</div>
+													
+													<div class="right-side">
+													<button type="button" class="btn btn-link success" data-dismiss="modal">Cerrar</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 		
 <label id="lblMensajeexito" style="color: green"  ></label>
 	
 </div>
 
+	                   
+
+	         <script type="text/javascript">
+
+							 function mostarBitacoraEditar(nombreAlumno,clase,observacion){
+						        	document.getElementById('lblNombreAlumno').innerHTML=nombreAlumno;
+						        	document.getElementById('lblClase').innerHTML=clase;
+						        	document.getElementById('txareaBitacora').innerHTML=observacion;
+						        	$('#bitacoraModal').modal('show');
+						        }
 
 
-
-<div class="card" id="bitacoraEditar" style="display:none"  >
-	<div class="card-header">
-		<div class="card-title">Instructor: <label id="lblNombreAlumno"  ></label> </div>
-		<div class="card-title">Clase: <label id="lblClase"  ></label></div>
-		<input type="hidden"  id="hiddenIdAlumno" ></input>
-		<input type="hidden"  id="hiddenIdClase" ></input>
-		<input type="hidden"  id="hiddenIdProfesor" ></input>
-		<input type="hidden"  id="hiddenEsCrear" ></input>
-	</div>
-	<div class="card-body">
-
-		<div class="form-group">
-			<label for="exampleFormControlTextarea1" >Bitacora</label>
-			<textarea class="form-control" id="txareaBitacora"  readonly="readonly"
-				rows="3"></textarea>
-		</div>
-		<div>
-			<input type="button" value="Cerrar Bitacora" 
-				class="btn btn-warning" id="btnCrearActualizrBitacora" onclick="cerrarBitacora()" />
-		</div>
-	</div>
-</div>
-
-
-<script type="text/javascript">
-
-     function cerrarBitacora(){
-    	 var bitacoraEditar = document.getElementById("bitacoraEditar");
-     	bitacoraEditar.style.display = "none";//ocultar bitacora
-        }
-        
-        function mostarBitacoraEditar(idAlumno,idClase,idProfesor,esCrear,nombreAlumno,clase,bitacora){
-        	document.getElementById('lblNombreAlumno').innerHTML=nombreAlumno;
-        	document.getElementById('lblClase').innerHTML=clase;
-        	if(bitacora != undefined) {
-        		document.getElementById('txareaBitacora').innerHTML=bitacora;
-        	}
-        	var bitacoraEditar = document.getElementById("bitacoraEditar");
-            	bitacoraEditar.style.display = "block";//mostrar bitacora
-        }
-
-        </script>
+				</script>
+				
+				
+			

@@ -9,7 +9,7 @@
 	}
 
 ?>
-				
+	<meta charset="utf-8">			
                 <!-- Main container start -->
 				<div class="main-container">
 
@@ -78,9 +78,18 @@
 							<?php
 							if (isset($_POST['visualList']) && $_POST['visualList']!=""):
 							?>
-
+                               
 								<?php
-								if ($_POST['visualList']=="1" && isset($_POST['nombre'])):
+								if ($_POST['visualList']=="1" ){
+								    $alumnosLista=RolesDAO::listarAlumnosBitacoraPorNombre($_SESSION['userid_sk'],$_POST['nombre']);
+								  
+								}
+								if ($_POST['visualList']=="2" ){
+								    $alumnosLista=RolesDAO::listarAlumnosBitacora($_SESSION['userid_sk']);
+								}
+								if ($_POST['visualList']=="3" ){
+								    $alumnosLista=RolesDAO::listarAlumnosBitacoraProFecha($_SESSION['userid_sk'],$_POST['fecha']);
+								}
 								?>
 
 									<div class="table-container">
@@ -89,35 +98,32 @@
 											<table id="hideSearchExample" class="table custom-table">
 												<thead>
 												<tr>
-													<th>Nombre</th>
-													<th>Apellido</th>
-													<th>Tel.Fijo</th>
-													<th>Celular</th>
-													<th>Correo</th>
-													<th>Bitacora</th>
+												    <th>Alumno</th>
+													<th>Clase</th>
+								                    <th>Correo</th>
+								                    <th>Fecha de Clase</th>
+								                    <th>Bitacora</th>
 												</tr>
 												</thead>
 												<tbody>
-													<?php foreach (RolesDAO::list_for_name_model($_POST['nombre']) as $fila) { ?>
+													<?php foreach ($alumnosLista as $fila) { 
+													    $nombreComplatoAlumno=$fila[0] . ' ' . $fila[1];
+													    ?>
 														<tr>
-															<td><?= $fila[1] ?></td>
+														   <td><?= $nombreComplatoAlumno ?></td>
+															<td><?= $fila[3] ?></td>
 															<td><?= $fila[2] ?></td>
-															<td><?= $fila[4] ?></td>
-															<td><?= $fila[5] ?></td>
-															<td><?= $fila[7] ?></td>
+															<td><?= $fila[4]?></td>
+															
 															<td>
 																<div class="input-group">
-																	<form method="POST">
-																		<input type = "hidden" name="visualNotes" value="<?php echo $fila[0] ?>" />
-																		<input type = "hidden" name="nameNotes" value="<?php echo $fila[1] ?>" />
-																		<input type = "hidden" name="nombre" value="<?php echo $_POST['nombre'] ?>" />
-																		<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
-																		<button 
-n-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agregar una observacion"><span class="icon-book-open"></span></button>
-																	</form>
+																<?php 
+																   echo '<button class="btn btn-primary" type= "button"  data-placement="top" title="Agregar una observacion"  onclick="mostarBitacoraEditar(' . $fila[7] . ', ' . $fila[8] . ',' .
+																				$_SESSION['userid_sk'] .',\'' . $nombreComplatoAlumno.'\',\''. $fila[3] .'\')" ><span class="icon-book-open"></span></button>';
+                                                                 ?>
+                                                                
 																</div>
 															</td>
-															
 														</tr>
 													<?php } ?>
 												</tbody>
@@ -125,164 +131,75 @@ n-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agre
 										</div>
 									</div>
 
-								<?php endif;
-								?>
-
-								<?php
-								if ($_POST['visualList']=="2"):
-								?>
-
-									<div class="table-container">
-										<div class="t-header"></div>
-										<div class="table-responsive">
-											<table id="hideSearchExample" class="table custom-table">
-												<thead>
-												<tr>
-													<th>Nombre</th>
-													<th>Apellido</th>
-													<th>Tel.Fijo</th>
-													<th>Celular</th>
-													<th>Correo</th>
-													<th>Bitacora</th>
-												</tr>
-												</thead>
-												<tbody>
-													<?php foreach (RolesDAO::listarDatos() as $fila) { ?>
-														<tr>
-															<td><?= $fila[1] ?></td>
-															<td><?= $fila[2] ?></td>
-															<td><?= $fila[4] ?></td>
-															<td><?= $fila[5] ?></td>
-															<td><?= $fila[7] ?></td>
-															<td>
-																<div class="input-group">
-																	<form method="POST">
-																		<input type = "hidden" name="visualNotes" value="<?php echo $fila[0] ?>" />
-																		<input type = "hidden" name="nameNotes" value="<?php echo $fila[1] ?>" />
-																		<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
-																		<button class="btn btn-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agregar una observacion"><span class="icon-book-open"></span></button>
-																	</form>
-																</div>
-															</td>
-															
-														</tr>
-													<?php } ?>
-												</tbody>
-										</table>
-										</div>
-									</div>
-
-								<?php endif;
-								?>
-
-
-								<?php
-								if ($_POST['visualList']=="3" && isset($_POST['fecha'])):
-								?>
-
-									<div class="table-container">
-										<div class="t-header"></div>
-										<div class="table-responsive">
-											<table id="hideSearchExample" class="table custom-table">
-												<thead>
-												<tr>
-													<th>Nombre</th>
-													<th>Descripcion</th>
-													<th>Fecha inicio</th>
-													<th>Fecha fin</th>
-													<th>opciones</th>
-												</tr>
-												</thead>
-												<tbody>
-													<?php foreach (RolesDAO::list_of_class_model() as $fila) {$validacion =substr($fila[7],6,4)."-".substr($fila[7],3,2)."-".substr($fila[7],0,2);
-														if($validacion==$_POST['fecha'] ):?>
-														<tr>
-															<td><?= $fila[1] ?></td>
-															<td><?= $fila[2] ?></td>
-															<td><?= $fila[7] ?></td>
-															<td><?= $fila[8] ?></td>
-															<td>
-																<div class="input-group">
-																	<form method="POST">
-																		<input type = "hidden" name="visualNotes" value="<?php echo $fila[0] ?>" />
-																		<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
-																		<button class="btn btn-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agregar una observacion"><span class="icon-book-open"></span></button>
-																	</form>
-																</div>
-															</td>
-															
-														</tr>
-													<?php endif; } ?>
-												</tbody>
-										</table>
-										</div>
-									</div>
-
-								<?php endif;
-								?>
-
+							
 							<?php endif;
 							?>
-                            <?php
-							if (isset($_POST['visualNotes']) && $_POST['visualNotes']!="" && $_POST['visualNotes']!="0"):
-							?>
-
-								<div class="card">
-									<div class="card-body">
-										<div class="card-title"><h4><?php if (isset($_POST['nameNotes']) && $_POST['nameNotes']!=""){ echo $_POST['nameNotes'];} else{ echo "Nombre del alumno"; }?></h4></div>
-										<div class="row gutters">
-
-											<div class="input-group">
-												<div class="col-xl-10 col-lglg-10 col-md-10 col-sm-12 col-12">
-												<form class="input-group" method="POST">
-
-													<div class="col-xl-10 col-lglg-10 col-md-10 col-sm-12 col-12">
-														<h6>Observaciones</h6>
-														<div class="form-group">
-															<textarea class="form-control" id="message" placeholder="Anotacion" maxlength="140" rows="2" name="anotacion"></textarea>
-															<div class="form-text text-muted">
-																<p id="characterLeft" class="help-block">140 characters left</p>
-															</div>
-														</div>
-													</div>
-													
-														<div class="col-xl-2 col-lglg-2 col-md-2" >
-															
-														<h2><br></h2>
-
-															<input type = "hidden" name="nombre" value="<?php echo $_POST['nombre'] ?>" />
-															<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
-																<input type = "hidden" name="visualNotes" id="visualNotes" value="<?php echo $_POST['visualNotes'] ?>" />
-																<input type = "hidden" name="fechaActual" id="fechaActual" value="<?php echo $fechaActual ?>" />
-															<button class="btn btn-primary" type="submit"><span class="icon-save2"></span>Guardar</button>
-														
-														</div>
-
-													</div>
-
-												</form>
-												<form method="POST">
-
-														<div class="col-xl-2 col-lglg-2 col-md-2" >
-															
-															<h2><br></h2>
-		
-																<input type = "hidden" name="nombre" value="<?php echo $_POST['nombre'] ?>" />
-																<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
-																<input type = "hidden" name="visualNotes" id="visualNotes" value="<?php echo $_POST['visualNotes'] ?>" />
-																<input type = "hidden" name="fechaActual" id="fechaActual" value="<?php echo $fechaActual ?>" />
-																<button class="btn btn-dark" type="submit"><span class="icon-circle-with-cross"></span>Cancelar</button>
-															
-														</div>
-												</form>
+							
+							
+							
+							<!-- Modal -->
+									<div class="modal fade" id="bitacoraModal" tabindex="-1" role="dialog" aria-labelledby="customModalTwoLabel" aria-hidden="true">
+									 <form class="input-group" method="POST">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+											
+												<div class="modal-header">
+													<h5 class="modal-title" id="customModalTwoLabel">Crear Bitacora</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
 												</div>
+												<div class="modal-body">
+													
+												    	<input type="hidden"  id="hiddenIdAlumno"  name="hiddenIdAlumno"  ></input>
+		                                                <input type="hidden"  id="hiddenIdClase" name="hiddenIdClase" ></input>
+		                                                <input type="hidden"  id="hiddenIdProfesor" name="hiddenIdProfesor" ></input>
+		                                                <input type = "hidden" name="fechaActual" id="fechaActual" value="<?php echo $fechaActual ?>" />
+		                                                <div class="form-group">
+															<label  class="col-form-label">Alumno:</label>
+															<label class="col-form-label" id="lblNombreAlumno" ></label>
+														</div>
+														<div class="form-group">
+															<label class="col-form-label">Clase: </label>
+															<label class="col-form-label" id="lblClase" ></label>
+														</div>
+	                                                     
+														<div class="form-group">
+															<label for="recipient-name" class="col-form-label">Bitacora</label>
+															<textarea class="form-control" id="anotacion" name="anotacion"	rows="3"></textarea>
+														</div>
+														
+													
+												</div>
+												<div class="modal-footer custom">
+													
+													<div class="left-side">
+														<button type="button" class="btn btn-link danger" data-dismiss="modal">Cancelar</button>
+													</div>
+													<div class="divider"></div>
+													<div class="right-side">
+														<button type="submint"  class="btn btn-link success">Gardar Bitacora</button>
+													</div>
+												</div>
+												
 											</div>
 										</div>
+										</form>
 									</div>
-								</div>
+							
+							<script type="text/javascript">
 
-							<?php endif;
-							?>
+							 function mostarBitacoraEditar(idAlumno,idClase,idProfesor,nombreAlumno,clase){
+						        	document.getElementById('hiddenIdAlumno').value =idAlumno.toString();
+						        	document.getElementById('hiddenIdClase').value =idClase.toString();
+						        	document.getElementById('hiddenIdProfesor').value =idProfesor.toString();
+						        	document.getElementById('lblNombreAlumno').innerHTML=nombreAlumno;
+						        	document.getElementById('lblClase').innerHTML=clase;
+						        	$('#bitacoraModal').modal('show');
+						        }
+						    </script>
+							
+                           
 
 						</div>
 					</div>
