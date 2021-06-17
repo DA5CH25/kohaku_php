@@ -112,7 +112,8 @@
 																		<input type = "hidden" name="nameNotes" value="<?php echo $fila[1] ?>" />
 																		<input type = "hidden" name="nombre" value="<?php echo $_POST['nombre'] ?>" />
 																		<input type = "hidden" name="visualList" value="<?php echo $_POST['visualList'] ?>" />
-																		<button class="btn btn-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agregar una observacion"><span class="icon-book-open"></span></button>
+																		<button 
+n-primary" type= "submit" data-toggle="tooltip" data-placement="top" title="Agregar una observacion"><span class="icon-book-open"></span></button>
 																	</form>
 																</div>
 															</td>

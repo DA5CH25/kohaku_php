@@ -45,7 +45,7 @@ if (isset($_POST['from']))
         // reemplazamos los caracteres no permitidos
         $idInstructor = evaluar($_POST['id_instructor']);
 
-        // insertamos el evento
+        // insertamos el evento sentencia sql
         $query="INSERT INTO clase VALUES(null,'$titulo','$descripcion','','$idInstructor','$inicio','$final','$inicio_normal','$final_normal')";
 
         // Ejecutamos nuestra sentencia sql

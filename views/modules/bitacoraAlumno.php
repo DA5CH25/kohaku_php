@@ -83,7 +83,7 @@ $mostrar_editar_bitacora='style="display:none"';
 								<th>Alumno</th>
 								<th>Bitacora</th>
 								<th>Fecha</th>
-								<th>Botom</th>
+								<th>Boton</th>
 							</tr>
 						</thead>
 						<tbody>

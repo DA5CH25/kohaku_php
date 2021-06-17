@@ -14,7 +14,7 @@
 			  $tipo_usuario_Instructor="2";
 			  $tipo_usuario_alumno="3";
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_Instructor){
-			      include "views/modules/bitacoraAlumno.php";
+			      include "views/modules/bitacoraProfesor.php";
 			  }
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_administrador){
 			      include "views/modules/bitacoraProfesor.php";

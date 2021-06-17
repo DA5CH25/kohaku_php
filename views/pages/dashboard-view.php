@@ -21,7 +21,7 @@
 			{
 			  $tipo_usuario_administrador="1";
 			  $tipo_usuario_alumno="3";
-			  if( $_SESSION['usertype_sk']==$tipo_usuario_alumno):?>
+			  if( $_SESSION['usertype_sk']==$tipo_usuario_alumno ||$_SESSION['usertype_sk']==2):?>
 				<meta http-equiv="refresh" content="0;url=http://localhost/kohaku_php/?page=home">
 				<?php endif;
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_administrador){
