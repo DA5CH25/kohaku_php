@@ -120,19 +120,83 @@
 </div>
 <br>
 <br>
-<div class="row gutters">
-<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="card">
+<!-- Row starts -->
+<?php if( $_SESSION['usertype_sk']==3): ?>
+					<div class="row gutters">						
+						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-12">
+							<div class="card h-340">
 								<div class="card-header">
-									<div class="card-title">Progreso y asistencia</div>
+									<div class="card-title">Progreso</div>
 								</div>
-								<div class="card-body pt-0">
-									<div id="visitors"></div>
+								<div class="card-body">
+									<div class="customScroll5">
+										<ul class="user-messages">
+											<li class="clearfix">
+												<div class="customer">2 Kyu</div>
+												<div class="delivery-details">
+													<span class="badge badge-primary">En Progreso</span>
+													<h5>2er kyu (Nikyu)</h5>
+													<p>En proceso de obtenci&oacuten.</p>
+												</div>
+											</li>
+											<li class="clearfix">
+												<div class="customer">1 Kyu</div>
+												<div class="delivery-details">
+													<span class="badge badge-success">Obtenido</span>
+													<h5>1er kyu (Ikkyu)</h5>
+													<p>Obtenido el 05/06/2021</p>
+												</div>
+											</li>
+											
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
-                        </div>
-<!-- Row end -->
+						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-12">
+							<div class="card h-310 agenda-bg">
+								<div class="card-body">
+									<div class="agenda">
+										<div class="todays-date">
+											<h5>Asistencia</h5>
+										</div>
+										<ul class="agenda-list">
+											<li>
+												<span class="bullet secondary">&nbsp;</span>
+												<div class="details">
+													<p>Clase de brazo (Asisti&oacute)</p>
+													<small>09:00</small>
+												</div>
+											</li>
+											<li>
+												<span class="bullet">&nbsp;</span>
+												<div class="details">
+													<p>Clase de Patadas (Falla)</p>
+													<small>09:30</small>
+												</div>
+											</li>
+											<li>
+												<span class="bullet secondary">&nbsp;</span>
+												<div class="details">
+													<p>Clase de meditaci&oacuten (Asisti&oacute)</p>
+													<small>10:00</small>
+												</div>
+											</li>
+											<li>
+												<span class="bullet secondary">&nbsp;</span>
+												<div class="details">
+													<p>Clase de estiramiento (Asisti&oacute)</p>
+													<small>09:00</small>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Row end -->
+						<?php endif; ?>
 
 </div>
 <!-- Main container end -->

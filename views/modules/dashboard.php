@@ -61,46 +61,43 @@ require_once './models/Roles.dao.php' ?>
 					<div class="row gutters">
 						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
 							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Customers</div>
-								</div>
-								<div class="card-body">
-									<div id="customers"></div>
-									<!-- Row starts -->
-									<div class="row gutters">
-										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-											<div class="info-stats3 shade-one-a">
-												<i class="icon-opacity"></i>
-												<h6>New</h6>
-												<h3>450</h3>
-											</div>
-										</div>
-										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-											<div class="info-stats3 shade-one-b">
-												<i class="icon-opacity"></i>
-												<h6>Returned</h6>
-												<h3>900</h3>
-											</div>
-										</div>
-									</div>
-									<!-- Row end -->
-								</div>
+								 <div class="card-body">
+                <div class="account-settings">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                         <?php if( $_SESSION['usertype_sk']==1): ?>
+							<img src="./vendor/img/tailor.jpg" alt="Admin" />
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==2): ?>
+							<img src="./vendor/img/user18.png" alt="Instructor" />
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==3): ?>
+							<img src="./vendor/img/laidy.jpg" alt="Estudiante" /> 
+							<?php endif; ?>
+                            
+                        </div>
+                        <h5 class="user-name"><?php echo $_SESSION['firstname_sk'].' '. $_SESSION['lastname_sk']; ?></h5>
+                        <p>Datos Personales</p>      
+                    </div>
+                    <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Correo: <?php echo $_SESSION['email_sk']; ?></a> 
+                    <?php if( $_SESSION['usertype_sk']==1): ?>
+							 <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Perfil: Administrador</a> 
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==2): ?>
+							<a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Perfil: Instructor</a> 
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==3): ?>
+							<a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Perfil: Estudiante</a> 
+							<?php endif; ?>
+                </div>
+            </div>
 							</div>
 						</div>
-						<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Deals</div>
-								</div>
-								<div class="card-body pt-0 pb-0">
-									<div id="deals"></div>
-								</div>
-							</div>
-						</div>
+						
 						<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">Logs</div>
+									<div class="card-title">Actividad Reciente</div>
 								</div>
 								<div class="card-body">
 									<div class="customScroll5">
