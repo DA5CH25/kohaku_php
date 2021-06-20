@@ -23,16 +23,16 @@
                         <h5 class="user-name"><?php echo $_SESSION['firstname_sk'].' '. $_SESSION['lastname_sk']; ?></h5>
                         <p>Datos Personales</p>      
                     </div>
-                    <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Correo: <?php echo $_SESSION['email_sk']; ?></a> 
-                    <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Rango: 4to kyu. (Yonkyu)</a> 
+                    <h6>Correo: <?php echo $_SESSION['email_sk']; ?></h6> 
+                    <h6>Rango: <?php echo $_SESSION['rango_sk']; ?></h6> 
                     <?php if( $_SESSION['usertype_sk']==1): ?>
-							 <a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Perfil: Administrador</a> 
+							 <h6>Perfil: Administrador</h6> 
 							<?php endif; ?>
 							<?php if( $_SESSION['usertype_sk']==2): ?>
-							<a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Perfil: Instructor</a> 
+							<h6>Perfil: Instructor</h6> 
 							<?php endif; ?>
 							<?php if( $_SESSION['usertype_sk']==3): ?>
-							<a href="/Kohaku_php/?page=class" class="alert alert-secondary alert-dismissible fade show">Perfil: Estudiante</a> 
+							<h6>Perfil: Estudiante</h6> 
 							<?php endif; ?>
                 </div>
             </div>

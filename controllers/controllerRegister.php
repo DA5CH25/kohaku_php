@@ -146,7 +146,6 @@
                     $saveAccount=modelRegister::add_user_full($dataRegisterCount);
                     // Comprobar si se registro la cuenta
                     if($saveAccount->rowCount()>=1){
-                    
                     }
                     else{
                         $alert=[
@@ -165,15 +164,15 @@
 
          
         public function edit_user_controller(){
-            $firstname= mainModel::clean_string($_POST['first_name']); 
-            $lastname= mainModel::clean_string($_POST['last_name']);
-            $email= mainModel::clean_string($_POST['email']);
-            $pass= mainModel::clean_string($_POST['pass']);
-            $direction= mainModel::clean_string($_POST['direction']);
-            $movil= mainModel::clean_string($_POST['movil']);
-            $phone= mainModel::clean_string($_POST['phone']);
-            $numberdoc= mainModel::clean_string($_POST['numberdoc']);
-            $usercode= mainModel::clean_string($_POST['userid']);
+            $firstname= mainModel::clean_string($_POST['edit_first_name']); 
+            $lastname= mainModel::clean_string($_POST['edit_last_name']);
+            //$email= mainModel::clean_string($_POST['edit_email']);
+            $pass= mainModel::clean_string($_POST['edit_pass']);
+            $direction= mainModel::clean_string($_POST['edit_direction']);
+            $movil= mainModel::clean_string($_POST['edit_movil']);
+            $phone= mainModel::clean_string($_POST['edit_phone']);
+            $numberdoc= mainModel::clean_string($_POST['edit_numberdoc']);
+            $usercode= mainModel::clean_string($_POST['edit_userid']);
 
 
 
@@ -193,7 +192,7 @@
                     $dataRegisterCount=[
                         "first_name"=>$firstname,
                         "last_name"=>$lastname,
-                        "email"=>$email,
+                        //"email"=>$email,
                         "pass"=>$pass,
                         "user_code"=>$usercode,
                         "direction"=>$direction,
@@ -201,7 +200,27 @@
                         "phone"=>$phone,
                         "numberdoc"=>$numberdoc
                     ];
-                    modelRegister::edit_user($dataRegisterCount);
+                    $editAccount=modelRegister::edit_user($dataRegisterCount);
+                    // Comprobar si se registro la cuenta
+                    /*if($saveAccount->rowCount()>=1){
+                 
+                    }
+                    else{
+                        $alert=[
+                            "alert"=>"simple",
+                            "title"=>"Ocurrio un error inesperado",
+                            "text"=>"La cuenta no se pudo registrar",
+                            "type"=>"error"
+                        ];
+                        return mainModel::sweet_alert($alert);
+                    }*/
+                    
+                
+            
+            
+        }public function delet_user_controller(){
+            $usercode= mainModel::clean_string($_POST['delet_userid']);
+                    $deletAccount=modelRegister::delet_user($usercode);
                     // Comprobar si se registro la cuenta
                     /*if($saveAccount->rowCount()>=1){
                  

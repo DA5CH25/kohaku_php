@@ -84,26 +84,48 @@ require_once './models/Rol.clase.php';
             
           //funcion para crea un usuario
           public function edit_user($datos){
-          $user_code = $datos['user_code'];
-          $first_name= $datos['first_name'];
-          $last_name=$datos['last_name'];
-          $numberdoc= $datos['numberdoc'];
-          $phone= $datos['phone'];
-          $movil= $datos['movil'];
-          $direction= $datos['direction'];
-          $email= $datos['email'];
-          $pass= $datos['pass'];
+            $user_code = $datos['user_code'];
+            $first_name= $datos['first_name'];
+            $last_name=$datos['last_name'];
+            $numberdoc= $datos['numberdoc'];
+            $phone= $datos['phone'];
+            $movil= $datos['movil'];
+            $direction= $datos['direction'];
+            //$email= $datos['email'];
+            $pass= $datos['pass'];
 
-          $con = new Conexion();
-		  $con->ejecutarActualizacion("UPDATE usuario SET nombre='$first_name', apellido ='$last_name', numero_identificacion='$numberdoc', telefono_fijo ='$phone', telefono_movil ='$movil', correo_electonico ='$email', clave ='$pass' WHERE id_usuario ='$user_code'");
-         
-		  $con->cerrarConexion();
-
-           /* $sql=mainModel::connect()->prepare("UPDATE usuario SET nombre='$first_name', apellido ='$last_name', numero_identificacion='$numberdoc', telefono_fijo ='$phone', telefono_movil ='$movil', correo_electonico ='$email', clave ='$pass', WHERE id_usuario ='$user_code'");
-                       
+            /*$con = new Conexion();
+            $con->ejecutarActualizacion("UPDATE usuario SET nombre='$first_name', apellido ='$last_name', numero_identificacion='$numberdoc', telefono_fijo ='$phone', telefono_movil ='$movil', correo_electonico ='$email', clave ='$pass' WHERE id_usuario ='$user_code'");
+            
+            $con->cerrarConexion();*/
+            $sql=mainModel::connect()->prepare("UPDATE usuario SET nombre=?, apellido =?, numero_identificacion=?, telefono_fijo =?, telefono_movil =?, direccion=?, clave =? WHERE id_usuario =?");   
+            //$sql->bindParam('ssssssssi',$first_name,$last_name,$numberdoc,$phone,$movil,$email,$direction,$pass,$user_code);         
+            $sql->bindParam(1, $first_name, PDO::PARAM_STR);
+            $sql->bindParam(2, $last_name, PDO::PARAM_STR);
+            $sql->bindParam(3, $numberdoc, PDO::PARAM_STR);
+            $sql->bindParam(4, $phone, PDO::PARAM_STR);
+            $sql->bindParam(5, $movil, PDO::PARAM_STR);
+            $sql->bindParam(6, $direction, PDO::PARAM_STR);
+            $sql->bindParam(7, $pass, PDO::PARAM_STR);
+            $sql->bindParam(8, $user_code, PDO::PARAM_STR);
             $sql->execute();
-            return $sql;*/
-          }
+            return $sql;
+        }
+        
+        public function delet_user($dato){
+
+            $cambio="2";
+            /*$con = new Conexion();
+            $con->ejecutarActualizacion("UPDATE usuario SET nombre='$first_name', apellido ='$last_name', numero_identificacion='$numberdoc', telefono_fijo ='$phone', telefono_movil ='$movil', correo_electonico ='$email', clave ='$pass' WHERE id_usuario ='$user_code'");
+            
+            $con->cerrarConexion();*/
+            $sql=mainModel::connect()->prepare("UPDATE usuario SET estado_usuario_id_estado_usuario=? WHERE id_usuario =?");   
+            //$sql->bindParam('ssssssssi',$first_name,$last_name,$numberdoc,$phone,$movil,$email,$direction,$pass,$user_code);         
+            $sql->bindParam(1, $cambio, PDO::PARAM_STR);
+            $sql->bindParam(2, $dato, PDO::PARAM_STR);
+            $sql->execute();
+            return $sql;
+        }
         }
 
 

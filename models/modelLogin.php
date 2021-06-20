@@ -30,4 +30,12 @@
             //$result=$sql->fetch();
             return $sql->fetch();
         }
+        protected function rango_session_model($dato){
+            $statu=1;
+            //comparcion de los datos recibidos en el login y los datos guardados en la base de datos
+            $sql=mainModel::connect()->prepare("SELECT * FROM rango_usuario WHERE idrango_usuario=:rango");
+            $sql->bindParam(':rango',$dato);
+            $sql->execute();
+            return $sql->fetch();
+        }
     }

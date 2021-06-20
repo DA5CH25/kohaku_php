@@ -40,7 +40,13 @@
 							<?php
 								if( $_SESSION['usertype_sk']==1):
 							?>
-							<li class="sidebar-dropdown inactive">
+							<li>
+								<a href="/Kohaku_php/?page=userupdate">
+									<i class="icon-users"></i>
+									<span class="menu-text">Usuarios</span>
+								</a>
+							</li>
+							<!--<li class="sidebar-dropdown inactive">
 								<a href="#">
 									<i class="icon-devices_other"></i>
 									<span class="menu-text">Usuarios</span>
@@ -61,7 +67,7 @@
 										</li>										
 									</ul>
 								</div>
-							</li>
+							</li>-->
 							<?php endif;
 							?>
 							

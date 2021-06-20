@@ -29,14 +29,14 @@
             
             if($userdatarequest['total']=="1"){
             //if($userdata->rowCount()>0){
-			    
+			    $rango=modelLogin::rango_session_model($userdata['rango_usuario_id_rango_usuario']);
                 
                 $_SESSION['firstname_sk']=$userdata['nombre'];
                 $_SESSION['lastname_sk']=$userdata['apellido'];
                 $_SESSION['email_sk']=$userdata['correo_electronico'];
                 $_SESSION['usertype_sk']=$userdata['tipo_usuario_id_tipo_usuario'];
                 $_SESSION['userid_sk']=$userdata['id_usuario'];
-                $_SESSION['rango_sk']=$userdata['rango_usuario_id_rango_usuario'];
+                $_SESSION['rango_sk']=$rango['nombre'];
                 $_SESSION['aux_sk']=0;
 
                 //Se agrega este código para acceder a la vista del calendario
