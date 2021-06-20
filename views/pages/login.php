@@ -61,7 +61,7 @@
 			<span>Confirma contraseña</span>
 			<input type="password" placeholder="Ejemplo" id="pass_confirm" name= "pass_confirm"/>
 
-			<button type= "submit" value ="Registro">Registrarte</button>
+			<button type= "submit" value ="Registro">Registrarse</button>
 
 		</form>
 	</div>

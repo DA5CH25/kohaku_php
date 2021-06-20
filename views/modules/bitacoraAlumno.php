@@ -68,7 +68,7 @@ $mostrar_editar_bitacora='style="display:none"';
 	<div
 		class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
 		<div class="form-group row mb-0">
-			<h1 class="h4 mb-0 text-white-800 text-center text-dark">Bitacora</h1>
+			<h1 class="h4 mb-0 text-white-800 text-center text-dark">Bit&aacutecora</h1>
 		</div>
 	</div>
 
@@ -81,9 +81,9 @@ $mostrar_editar_bitacora='style="display:none"';
 						    	<th>Clase</th>
 								<th>Instructor</th>
 								<th>Alumno</th>
-								<th>Bitacora</th>
+								<th>Bit&aacutecora</th>
 								<th>Fecha</th>
-								<th>Boton</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>

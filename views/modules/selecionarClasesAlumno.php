@@ -109,7 +109,7 @@ $base_url='vendor/calendario/';
            echo '<td>'.$row['nombre'].'</td>';
            echo '<td>'.$row['inicio_normal'].'</td>';
            echo '<td>'.$row['final_normal'].'</td>';
-           echo '<td><input type="button" value="selecionar" class="btn btn-primary" onclick="guardarClase('.$idUsuarioSesion.', '.$row['id'].')" /></td>';
+           echo '<td><input type="button" value="seleccionar" class="btn btn-primary" onclick="guardarClase('.$idUsuarioSesion.', '.$row['id'].')" /></td>';
            echo '</tr>';
         }
         }

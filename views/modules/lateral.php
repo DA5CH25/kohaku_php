@@ -15,9 +15,7 @@
 					<!-- sidebar menu start -->
 					<div class="sidebar-menu">
 						<ul>
-							<?php
-								if( $_SESSION['usertype_sk']==1):
-							?>
+							<?php if( $_SESSION['usertype_sk']==1): ?>
 							<li class="header-menu">Menu</li>
 							<li>
 								<a href="/Kohaku_php/?page=dashboard">
@@ -32,8 +30,7 @@
 									</ul>
 								</div>-->
 							</li>
-							<?php endif;
-							?>
+							<?php endif; ?>
 							<li>
 								<a href="/Kohaku_php/?page=home">
 									<i class="icon-user1"></i>
@@ -83,7 +80,7 @@
 							<li>
 								<a href="/Kohaku_php/?page=bitacora">
 									<i class="icon-documents"></i>
-									<span class="menu-text">Bitacora</span>
+									<span class="menu-text">Bit&aacutecora</span>
 								</a>
 							</li>
 						</ul>

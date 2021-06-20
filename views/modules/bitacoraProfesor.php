@@ -102,7 +102,7 @@
 													<th>Clase</th>
 								                    <th>Correo</th>
 								                    <th>Fecha de Clase</th>
-								                    <th>Bitacora</th>
+								                    <th>Bit&aacutecora</th>
 												</tr>
 												</thead>
 												<tbody>

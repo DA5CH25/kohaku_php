@@ -289,7 +289,7 @@ if (isset($_POST['from']))
                     <br>
 
 
-                    <label for="descripcion">Descripcion</label>
+                    <label for="descripcion">Descripci&oacuten</label>
                     <textarea id="descripcion" name="descripcion" required class="form-control" rows="3"></textarea>
                 
                    

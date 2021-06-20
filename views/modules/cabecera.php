@@ -54,6 +54,15 @@
 									</ul>
 								</div>
 							</li>-->
+							<?php if( $_SESSION['usertype_sk']==1): ?>
+							Admin
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==2): ?>
+							Instructor
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==3): ?>
+							Estudiante
+							<?php endif; ?>
 							<li class="dropdown">
 								<a href="#" id="notifications" data-toggle="dropdown" aria-haspopup="true">
 									<i class="icon-bell"></i>
@@ -103,11 +112,20 @@
 									</ul>
 								</div>
 							</li>
+							
 							<li class="dropdown">
 								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
 									<span class="user-name"><?php echo $_SESSION['firstname_sk']; ?></span>
 									<span class="avatar">
-										<img src="./vendor/img/user18.png" alt="avatar">
+										 <?php if( $_SESSION['usertype_sk']==1): ?>
+							<img src="./vendor/img/tailor.jpg" alt="Admin" />
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==2): ?>
+							<img src="./vendor/img/user18.png" alt="Instructor" />
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==3): ?>
+							<img src="./vendor/img/laidy.jpg" alt="Estudiante" /> 
+							<?php endif; ?>
 										<span class="status busy"></span>
 									</span>
 								</a>
@@ -115,14 +133,22 @@
 									<div class="header-profile-actions">
 										<div class="header-user-profile">
 											<div class="header-user">
-												<img src="./vendor/img/user18.png" alt="Admin Template">
+												 <?php if( $_SESSION['usertype_sk']==1): ?>
+							<img src="./vendor/img/tailor.jpg" alt="Admin" />
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==2): ?>
+							<img src="./vendor/img/user18.png" alt="Instructor" />
+							<?php endif; ?>
+							<?php if( $_SESSION['usertype_sk']==3): ?>
+							<img src="./vendor/img/laidy.jpg" alt="Estudiante" /> 
+							<?php endif; ?>
 											</div>
 											<h5><?php echo $_SESSION['firstname_sk']; ?></h5>
-											<p>Admin</p>
+											
 										</div>
-										<a href="/Kohaku_php/?page=News"><i class="icon-user1"></i> My Profile</a>
-										<a href="account-settings.html"><i class="icon-settings1"></i> Account Settings</a>
-										<a href="http://localhost/kohaku_php/login"><i class="icon-log-out1"></i> Sign Out</a>
+										<a href="/Kohaku_php/?page=News"><i class="icon-user1"></i> Mi Perfil</a>
+										<a href="account-settings.html"><i class="icon-settings1"></i> Opciones</a>
+										<a href="http://localhost/kohaku_php/login"><i class="icon-log-out1"></i> Cerrar sesi&oacuten</a>
 									</div>
 								</div>
 							</li>
