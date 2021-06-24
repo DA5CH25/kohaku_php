@@ -160,8 +160,13 @@
                 <!-- Page header start -->
 				<div class="page-header">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item">Home</li>
-						<li class="breadcrumb-item active"> <?php echo $_GET['page'];?></li>
+						<li class="breadcrumb-item">Aplictivo</li>
+						<li class="breadcrumb-item active"> <?php if($_GET['page']=='dashboard'){ echo "Inicio";}
+						if($_GET['page']=='home'){ echo "Perfil";}
+						if($_GET['page']=='userupdate'){ echo "Usuarios";}
+						if($_GET['page']=='userdocument'){ echo "Documentacion";}
+						if($_GET['page']=='class'){ echo "Clases";}
+						if($_GET['page']=='bitacora'){ echo "bitacora";}?></li>
 					</ol>
 
 					<!--<ul class="app-actions">

@@ -20,7 +20,7 @@
 							<li>
 								<a href="/Kohaku_php/?page=dashboard">
 									<i class="icon-file-text"></i>
-									<span class="menu-text">Control</span>
+									<span class="menu-text">Inicio</span>
 								</a>
 								<!--<div class="sidebar-submenu">
 									<ul>
